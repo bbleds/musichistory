@@ -26,12 +26,27 @@ body{
  }
 
 #sidebars_holder{
- 	height: 500px;
+ 	height: 400px;
  	width: 80%;
- 	/*background-color: red;*/
  	display: block;
  	margin: auto;
  	margin-top: 20px;
  }
+ 	#main_left_sidebar{
+ 		display: inline-block;
+ 		width: 20%;
+ 		border: 2px solid black;
+ 		height: 100%;
+ 		background-color: #4DD7FA;	
+ 	}
+
+ 	#main_right_sidebar{
+ 		background-color: #FEFAC0;
+ 		width: 69%;
+ 		margin-left: 9.9%;
+ 		border: 2px solid black;
+ 		height: 100%;
+ 		display: inline-block;
+ 	}
 
 
