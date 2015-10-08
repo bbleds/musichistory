@@ -81,7 +81,26 @@ input[type="range"]{
 	width: 70%;
 	display: block;
 	margin: auto;
-	margin-top: 10px;
+	margin: 10px auto;
+}
+
+#checkbox_holder{
+	display: block;
+	width: 80%;
+	margin: 20px auto;
+}
+
+#checkbox_holder input[type="checkbox"] {
+	display: inline-block;
+	font-size: 1.3rem;
+}
+
+#checkbox_holder li{
+	list-style: none;
+}
+
+.right_item{
+	margin-left: 20%;
 }
 
 
