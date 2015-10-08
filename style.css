@@ -15,3 +15,14 @@ body{
  .header_text{
  	display: inline;
  }
+
+ #nav_bar ul{
+ 	margin-top: 30px;
+ }
+
+ #nav_bar ul li{
+ 	border-right: 2px solid black;
+ 	padding:  3px 10px; 
+ }
+
+
