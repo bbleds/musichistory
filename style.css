@@ -1,0 +1,12 @@
+body{
+	margin: 0px;
+	background-color: white;
+}
+ #nav_bar{
+ 	width: 80%;
+ 	height: 80px;
+ 	background-color:  #FFB4B0;
+ 	border: 2px solid black;
+ 	margin: auto;
+ 	margin-top: 20px;
+ }
