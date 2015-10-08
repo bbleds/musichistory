@@ -86,7 +86,7 @@ input[type="range"]{
 
 #checkbox_holder{
 	display: block;
-	width: 80%;
+	width: 63%;
 	margin: 10px auto;
 }
 
@@ -103,4 +103,10 @@ input[type="range"]{
 	width: 45%;
 }
 
-
+#filter_me{
+	width: 30%;
+	font-size: 1.3rem;
+	display: block;
+	margin: auto;
+	margin-top: 20px;
+}
