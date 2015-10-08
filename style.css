@@ -15,23 +15,3 @@ body{
  .header_text{
  	display: inline;
  }
-
- p.header_text{
- 	margin-left: 5%;
- 	height: 100%;
- 	text-align: center;
- 	position: absolute;
- 	top: 50%;
- 	margin-top: -12px;
- 	font-size: 1.1rem;
- }
-
- p.header_text:after{
- 	content: " | ";
- 	display: inline;
- 	color: black;
- 	position: absolute;
- 	font-size: 1.5rem;
- 	margin-top: -22px;
- 	margin-left:50px;
- }
