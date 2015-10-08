@@ -87,11 +87,10 @@ input[type="range"]{
 #checkbox_holder{
 	display: block;
 	width: 80%;
-	margin: 20px auto;
+	margin: 10px auto;
 }
 
 #checkbox_holder input[type="checkbox"] {
-	display: inline-block;
 	font-size: 1.3rem;
 }
 
@@ -99,8 +98,9 @@ input[type="range"]{
 	list-style: none;
 }
 
-.right_item{
-	margin-left: 20%;
+#left_checks, #right_checks{
+	display: inline-block;
+	width: 45%;
 }
 
 
