@@ -42,6 +42,7 @@ body{
  		position: absolute;
  		left: 0px;
  		top: 0px;
+ 		padding-top: 20px;
  	}
 
  	#main_right_sidebar{
@@ -61,11 +62,26 @@ label{
 }
 
 input[type="range"]{
-	width: 70%;
+	width: 80%;
 	height: 40px;
 	display: block;
 	margin: auto;
 	background-color: white;
+}
+
+#ar_select{
+	width: 70%;
+	display: block;
+	margin: auto;
+	margin: 10px auto;
+}
+
+
+#al_select{
+	width: 70%;
+	display: block;
+	margin: auto;
+	margin-top: 10px;
 }
 
 
