@@ -131,3 +131,10 @@ input[type="range"]{
 	border-right: 2px solid black;
 	padding: 0px 20px;
 }
+
+/* New Code */
+
+#main_right_sidebar p{
+	width: 95%;
+	padding-left: 5%;
+}
