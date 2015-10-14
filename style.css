@@ -2,6 +2,14 @@ body{
 	margin: 0px;
 	background-color: white;
 }
+
+div, p, li {
+	font-family: sans-serif;
+	
+} 
+
+
+
  #nav_bar{
  	width: 80%;
  	height: 80px;
@@ -72,15 +80,7 @@ input[type="range"]{
 	background-color: white;
 }
 
-#ar_select{
-	width: 70%;
-	display: block;
-	margin: auto;
-	margin: 10px auto;
-}
-
-
-#al_select{
+.aral_select{
 	width: 70%;
 	display: block;
 	margin: auto;
@@ -89,8 +89,8 @@ input[type="range"]{
 
 #checkbox_holder{
 	display: block;
-	width: 63%;
-	margin: 10px auto;
+	width: 90%;
+	margin-left: 5%;
 }
 
 #checkbox_holder input[type="checkbox"] {
@@ -101,7 +101,7 @@ input[type="range"]{
 	list-style: none;
 }
 
-#left_checks, #right_checks{
+.checky{
 	display: inline-block;
 	width: 45%;
 }
