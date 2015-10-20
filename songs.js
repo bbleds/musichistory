@@ -37,4 +37,15 @@ for (var i = 0; i < songs.length; i++){
 	
 }
 
+//  Now, the entire container for the form should not be displayed when the user first visits your page. The song list with the corresponding form should be visible.
+// When the user clicks on "Add Music", the list view should be hidden, and the music form should show.
+// When the user clicks on "List Music", the music form should be hidden, and the list view should show.
+// Once the user fills out the song form and clicks the add button, you should collect all values from the input fields, add the song to your array of songs, and update the song list in the DOM.
 
+var addMusic = document.getElementById("add_music");
+function showAdder(){
+	var inputDiv = document.getElementById("add_wrap");
+	inputDiv.classList.toggle("add_vis");
+}
+
+add_music.addEventListener("click", showAdder);

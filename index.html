@@ -12,12 +12,21 @@
 			<nav id="nav_bar">
 				<ul>	
 					<li class="header_text">View Music</li>
-					<li class="header_text"><a href="#">Add Music</a></li>
+					<li class="header_text" id="add_music"><a href="#">Add Music</a></li>
 					<li class="header_text"><a href="#">Profile</a></li>
 				</ul>
 			</nav>
 		</header>
 		<div id="sidebars_holder">
+
+		<!-- Add a DOM element that contains some input fields for the user to enter in the name of a song, the artist for the song, and the album. You do not need to enclose them in a <form> element because we're not actually submitting this form anywhere. -->
+		<div id="add_wrap" class="add_vis">
+			<li class="music_selector"><label class="inline" for="song_name">Song Name</label><input type="text" id="song_name" name="song_name"></li>
+			<li class="music_selector"><label class="inline" for="artist_name">Artist Name</label><input  type="text" id="artist_name" name="artist_name"></li>
+			<li class="music_selector"><label class="inline" for="album_name">Album Name</label><input type="text" id="album_name" name="album_name"></li>
+			<li class="music_selector"><button class="add_music"> Add</button></li>
+		</div> <!-- end add_wrap -->
+		<div id="main_music_wrap">
 			<div id="main_left_sidebar">
 			  <form id="filter_form">
 				<label for="song_length">Song Length:</label>
@@ -56,31 +65,9 @@
 			</div><!-- end main_left_sidebar -->
 
 			<div id="main_right_sidebar">
-				<!--<p class="title_text">Spirit of Radio</p>
-				<ul class="song_title">
-					<li>Rush</li>
-					<li>Permanent Waves</li>
-					<li>Rock</li>
-				</ul>
-				<p class="title_text">Sweet Child O' Mine</p>
-				<ul class="song_title">
-					<li>Guns N' Roses</li>
-					<li>Appetite for Destruction</li>
-					<li>Rock</li>
-				</ul>
-				<p class="title_text">Fractals</p>
-				<ul class="song_title">
-					<li>Seven Lions</li>
-					<li>Days to Come</li>
-					<li>Pop</li>
-				</ul>
-				<p class="title_text">Levels</p>
-				<ul class="song_title">
-					<li>Avicii</li>
-					<li>True</li>
-					<li>Pop</li>
-				</ul> -->
+			
 			</div><!-- end main_right_sidebar -->
+		</div><!-- end main music wrap -->
 		</div> <!-- end sidebars_holder -->
 		<div id="song_hold"></div>
 	</div> <!-- end main_container -->
