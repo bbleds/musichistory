@@ -42,7 +42,7 @@ body{
  		background-color: #4DD7FA;	
  		position: absolute;
  		left: 0px;
- 		top: 50px;
+ 		top: 0px;
  	}
 
  	#main_right_sidebar{
@@ -53,7 +53,7 @@ body{
  		display: inline-block;
  		position: absolute;
  		right: 0px;
- 		top: 50px;
+ 		top: 0px;
  	}
 
  	#main_left_sidebar label:first-of-type{
@@ -128,8 +128,8 @@ input[type="range"]{
 
 #main_right_sidebar li{
 	list-style: none;
-	display: inline-block;
-	border-right: 2px solid black;
+	display: block;
+	/*border-right: 2px solid black;*/
 	padding: 0px 20px;
 }
 
@@ -168,7 +168,7 @@ header{
 }
 
 .add_vis{
-	visibility: hidden;
+	display: none;
 }
 
 
