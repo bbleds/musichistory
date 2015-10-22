@@ -47,18 +47,18 @@ outputSongs();
 
 var addMusic = document.getElementById("add_music");
 var listMusic = document.getElementById("list_music");
-var addBtn = document.getElementById("addSong");
+var addBtn = document.getElementById("addBtn");
 
 function showAdder(){
 	var inputDiv = document.getElementById("add_wrap");
-	var songdiv = document.getElementById("indiv_songs");
+	var songdiv = document.getElementById("main_music_wrap");
 	inputDiv.classList.remove("add_vis");
 	songdiv.classList.add("add_vis");
 }
 
 function showList(){
 	var inputDiv = document.getElementById("add_wrap");
-	var songdiv = document.getElementById("indiv_songs");
+	var songdiv = document.getElementById("main_music_wrap");
 	inputDiv.classList.add("add_vis");
 	songdiv.classList.remove("add_vis");
 }
@@ -77,7 +77,7 @@ function clearInputs(){
   	var artistName = document.getElementById("artist_name").value;
   	var albumName  = document.getElementById("album_name").value;
   	var inputDiv = document.getElementById("add_wrap");
-	var songdiv = document.getElementById("indiv_songs");
+	var songdiv = document.getElementById("main_music_wrap");
   	if(song_name !== "" && artistName !== "" && albumName !== ""){
   		songs = [];
   		songs[songs.length] = songName + " - by "+ artistName +" on the album "+albumName;

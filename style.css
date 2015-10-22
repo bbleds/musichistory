@@ -1,28 +1,45 @@
 body{
 	margin: 0px;
-	background-color: white;
 }
  #nav_bar{
  	width: 80%;
  	height: 80px;
- 	background-color:  #FFB4B0;
- 	border: 2px solid black;
+ 	/*background-color:  #FFB4B0;*/
+ 	/*border: 2px solid black;*/
  	margin: auto;
  	margin-top: 20px;
  	position: relative;
  }
 
+  #nav_bar img{
+  	position: absolute;
+  	height: 60px;
+  	width: 60px;
+  	top: -18px;
+  }
+
  .header_text{
  	display: inline;
+ 	color: white;
+ 	border: none;
  }
 
+  .header_text a{
+  	color: inherit;
+  	font-style: normal;
+  	text-decoration: none;
+  }
+
  #nav_bar ul{
- 	margin-top: 30px;
+ 	margin-top: 50px;
+ 	text-align: right;
  }
 
  #nav_bar ul li{
- 	border-right: 2px solid black;
+ 	/*border-right: 2px solid black;*/
  	padding:  3px 10px; 
+ 	text-decoration: none;
+
  }
 
 #sidebars_holder{
@@ -37,23 +54,32 @@ body{
  	#main_left_sidebar{
  		display: inline-block;
  		width: 28%;
- 		border: 2px solid black;
+ 		/*border: 2px solid black;*/
  		height: 100%;
- 		background-color: #4DD7FA;	
+ 		background-color: rgba(52, 152, 219, 0.43);	
  		position: absolute;
  		left: 0px;
  		top: 0px;
+ 		border-radius: 5px;
+ 		color: white;
+ 		font-family: sans-serif;
+ 		font-weight: 100;
+ 		font-size: 1.2rem;
  	}
 
  	#main_right_sidebar{
- 		background-color: #FEFAC0;
+ 		/*background-color: #FEFAC0;*/
  		width: 68%;
- 		border: 2px solid black;
- 		height: 100%;
+ 		/*border: 2px solid black;*/
+ 		height: auto;
+ 		min-height: 100%;
  		display: inline-block;
  		position: absolute;
  		right: 0px;
  		top: 0px;
+ 		/*background-color: rgba(52, 152, 219, 0.43);*/
+ 		color: white;
+ 		border-radius: 5px;
  	}
 
  	#main_left_sidebar label:first-of-type{
@@ -105,14 +131,20 @@ input[type="range"]{
 #left_checks, #right_checks{
 	display: inline-block;
 	width: 45%;
+	font-size: 1rem;
 }
 
 #filter_me{
-	width: 30%;
+	width: 34%;
 	font-size: 1.3rem;
 	display: block;
 	margin: auto;
-	margin-top: 20px;
+	margin-top: 30px;
+	height: 45px;
+	color: rgba(49, 49, 49, 0.76);
+	border: none;
+	background-color: white;
+	border-radius: 3px;
 }
 
 .title_text{
@@ -138,6 +170,9 @@ input[type="range"]{
 #main_right_sidebar p{
 	width: 95%;
 	padding-left: 5%;
+	font-family: sans-serif;
+	font-weight: 100;
+	font-size: 1.2rem;
 }
 
 
@@ -159,7 +194,13 @@ header{
 .music_selector{
 	list-style-type: none;
 	margin: 10px;
-	display: inline;
+	display: block;
+	text-align: center;
+	color: white;
+	font-family: sans-serif;
+	font-size: 1.8rem;
+	font-weight: 100;
+	margin-bottom: 30px;
 }
 
 
@@ -169,6 +210,35 @@ header{
 
 .add_vis{
 	display: none;
+}
+
+html{
+	background-image: url("https://images.unsplash.com/photo-1420161900862-9a86fa1f5c79?q=80&fm=jpg&w=1080&fit=max&s=f216ee281145471d2736b1dd3ec70d3d");
+	background-position: fixed;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;  
+}
+
+.header_text{
+	font-family: sans-serif;
+	font-size: 1.2rem;
+	font-weight: 100;
+}
+
+.add_music{
+	width: 120px;
+	height: 40px;
+	color: white;
+	background-color: rgba(52, 152, 219, 0.76);
+	border: 0px;
+	font-size: 1.6rem;
+	border-radius: 3px;
+}
+
+#add_wrap{
+	margin-top: 100px;
 }
 
 
