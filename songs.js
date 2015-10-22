@@ -47,28 +47,42 @@ outputSongs();
 // When the user clicks on "List Music", the music form should be hidden, and the list view should show.
 // Once the user fills out the song form and clicks the add button, you should collect all values from the input fields, add the song to your array of songs, and update the song list in the DOM.
 
-var addMusic = document.getElementById("add_music");
-var listMusic = document.getElementById("list_music");
-var addBtn = document.getElementById("addBtn");
+//the following have been refactored to jquery
+	// var addMusic = document.getElementById("add_music");
+	// var listMusic = document.getElementById("list_music");
+	// var addBtn = document.getElementById("addBtn");
 
 function showAdder(){
-	var inputDiv = document.getElementById("add_wrap");
-	var songdiv = document.getElementById("main_music_wrap");
-	inputDiv.classList.remove("add_vis");
-	songdiv.classList.add("add_vis");
+	//refactored the following to jquery -->
+		// var inputDiv = document.getElementById("add_wrap");
+		// var songdiv = document.getElementById("main_music_wrap");
+		// inputDiv.classList.remove("add_vis");
+		// songdiv.classList.add("add_vis");
+
+	$("#add_wrap").removeClass("add_vis");
+	$("#main_music_wrap").addClass("add_vis");
 }
 
 function showList(){
-	var inputDiv = document.getElementById("add_wrap");
-	var songdiv = document.getElementById("main_music_wrap");
-	inputDiv.classList.add("add_vis");
-	songdiv.classList.remove("add_vis");
+	//refactored the following to jquery -->
+		// var inputDiv = document.getElementById("add_wrap");
+		// var songdiv = document.getElementById("main_music_wrap");
+		// inputDiv.classList.add("add_vis");
+		// songdiv.classList.remove("add_vis");
+
+	$("#add_wrap").addClass("add_vis");
+	$("#main_music_wrap").removeClass("add_vis");
 }
 
 function clearInputs(){
-	document.getElementById("song_name").value = "";
-  	document.getElementById("artist_name").value = "";
-	document.getElementById("album_name").value = "";
+	//refactored the following to jquery -->
+		// document.getElementById("song_name").value = "";
+		// document.getElementById("artist_name").value = "";
+		// document.getElementById("album_name").value = "";
+
+		$("#song_name").val("");
+		$("#artist_name").val("");
+		$("#album_name").val("");
 }
 
 /* Once the user fills out the song form and clicks the add button, you should collect 
@@ -80,22 +94,31 @@ function clearInputs(){
   	var albumName  = document.getElementById("album_name").value;
   	var inputDiv = document.getElementById("add_wrap");
 	var songdiv = document.getElementById("main_music_wrap");
-  	if(song_name !== "" && artistName !== "" && albumName !== ""){
+
+	// added jquery here
+  	if($("#song_name").val() !== "" && $("#artist_name").val() !== "" && $("#album_name").val() !== ""){
   		songs = [];
-  		songs[songs.length] = songName + " - by "+ artistName +" on the album "+albumName;
+  		songs[songs.length] = $("#song_name").val() + " - by "+ $("#artist_name").val() +" on the album "+$("#album_name").val();
   		outputSongs();
 
   		clearInputs();
-		inputDiv.classList.add("add_vis");
-		songdiv.classList.remove("add_vis");
+
+  		//refactored the following to jquery -->
+			// inputDiv.classList.add("add_vis");
+			// songdiv.classList.remove("add_vis");
+		$("#add_wrap").addClass("add_vis");
+		$("#main_music_wrap").removeClass("add_vis");
 
   	}
   }
 
 
-addMusic.addEventListener("click", showAdder);
-listMusic.addEventListener("click", showList);
-addBtn.addEventListener("click", appendSong);
+$("#add_music").click(function(){ showAdder(); });
+		// addMusic.addEventListener("click", showAdder);
+$("#list_music").click(function(){ showList(); });
+		// listMusic.addEventListener("click", showList);
+$("#addBtn").click(function(){ appendSong(); });
+		// addBtn.addEventListener("click", appendSong);
 
 
 });
