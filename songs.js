@@ -59,8 +59,10 @@ function showAdder(){
 		// inputDiv.classList.remove("add_vis");
 		// songdiv.classList.add("add_vis");
 
-	$("#add_wrap").removeClass("add_vis");
-	$("#main_music_wrap").addClass("add_vis");
+	// $("#add_wrap").removeClass("add_vis");
+	// $("#main_music_wrap").addClass("add_vis");
+	$("#main_music_wrap").css("display", "none");
+	$("#add_wrap").fadeIn("slow");
 }
 
 function showList(){
@@ -70,8 +72,11 @@ function showList(){
 		// inputDiv.classList.add("add_vis");
 		// songdiv.classList.remove("add_vis");
 
-	$("#add_wrap").addClass("add_vis");
-	$("#main_music_wrap").removeClass("add_vis");
+	// $("#add_wrap").addClass("add_vis");
+	// // $("#main_music_wrap").removeClass("add_vis");
+
+	$("#add_wrap").css("display", "none");
+	$("#main_music_wrap").fadeIn("slow");
 }
 
 function clearInputs(){
@@ -106,8 +111,8 @@ function clearInputs(){
   		//refactored the following to jquery -->
 			// inputDiv.classList.add("add_vis");
 			// songdiv.classList.remove("add_vis");
-		$("#add_wrap").addClass("add_vis");
-		$("#main_music_wrap").removeClass("add_vis");
+		$("#add_wrap").css("display", "none");
+		$("#main_music_wrap").fadeIn();
 
   	}
   }

@@ -65,6 +65,7 @@ body{
  		font-family: sans-serif;
  		font-weight: 100;
  		font-size: 1.2rem;
+ 		padding-bottom: 4px;
  	}
 
  	#main_right_sidebar{
@@ -79,7 +80,7 @@ body{
  		top: 0px;
  		/*background-color: rgba(52, 152, 219, 0.43);*/
  		color: white;
- 		border-radius: 5px;
+ 		border-radius: 20px;
  	}
 
  	#main_left_sidebar label:first-of-type{
@@ -155,7 +156,16 @@ input[type="range"]{
 }
 
 #main_right_sidebar p:first-of-type{
-	margin-top: 20px;
+	/*margin-top: 20px;*/
+	border-radius: 5px 5px 0px 0px;
+}
+
+#main_right_sidebar p:nth-of-type(2n+1){
+	background-color: rgba(52, 164, 219, 0.74);
+}
+
+#main_right_sidebar p:last-of-type{
+	border-radius: 0px 0px 5px 5px;
 }
 
 #main_right_sidebar li{
@@ -173,6 +183,9 @@ input[type="range"]{
 	font-family: sans-serif;
 	font-weight: 100;
 	font-size: 1.2rem;
+	margin: 0px;
+	padding: 20px;
+	background-color: rgba(52, 152, 219, 0.43); 
 }
 
 
@@ -238,7 +251,7 @@ html{
 }
 
 #add_wrap{
-	margin-top: 100px;
+	margin-top: 200px;
 }
 
 
