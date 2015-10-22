@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 /*Requirements
 
 Use JavaScript arrays, loops, and innerHTML to show the music you love.
@@ -94,6 +96,9 @@ function clearInputs(){
 addMusic.addEventListener("click", showAdder);
 listMusic.addEventListener("click", showList);
 addBtn.addEventListener("click", appendSong);
+
+
+});
 
 
 
