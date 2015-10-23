@@ -21,7 +21,7 @@ var moreSongsWereAdded = false;
 	}).done(function(data){
 		console.log("Second Data is: ", data.MoreSongs);
 		$("#moreSongs").click(function(){
-			for(var i =0; i < data.MoreSongs.length; i++){
+				for(var i =0; i < data.MoreSongs.length; i++){
 			var indivSong = data.MoreSongs[i];
 			$("#indiv_songs").append("<p>"+indivSong.title+" - by "+indivSong.artist+" on the album "+indivSong.album+"<button class='deleteSong'>Delete</button></p>");
 
@@ -65,14 +65,6 @@ var moreSongsWereAdded = false;
 				data.songs.push(newObj);
 				// console.log(data.songs);
 				$("#indiv_songs").html("");
-
-				//if user added more songs
-				if(moreSongsWereAdded === true){
-					//this is where I need to loop through both objects and output onto dom, then insert new song
-					console.log("there are more songs");
-
-				}else{
-
 				for(var i =0; i < data.songs.length; i++){
 					console.log(data.songs[i]);
 					var indivSong = data.songs[i];
@@ -86,7 +78,6 @@ var moreSongsWereAdded = false;
 				$("#main_music_wrap").fadeIn("slow");
 				clearInputs();
 			}
-		}
 
 	}
 
