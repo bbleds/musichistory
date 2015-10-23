@@ -1,129 +1,125 @@
 $(document).ready(function(){
 
-/*Requirements
+var moreSongsWereAdded = false;
 
-Use JavaScript arrays, loops, and innerHTML to show the music you love.
+//Ajax call
+	$.ajax({
+		url: "songsList.json"
+	}).done(function(data){
 
-Students must use JavaScript to create a list of songs in the index.html file for their Music History project. Have them download the songs.js file, which contains an array of strings with song information.
+		loopOverMySongObjects(data);
 
-Each student must add one song to the beginning and the end of the array.
-Loop over the array and remove any words or characters that obviously don't belong.
-Students must find and replace the > character in each item with a - character.
-Must add each string to the DOM in index.html in the main content area.
+		// Add event listener and connection to function
+		$("#addBtn").click(function(){ createNewObjectAndClear(data) });
 
-{Song name} by {Artist} on the album {Album}
-
-*/
+	});
 
 
-var songs = [];
+	//Ajax call for the extra songs
+	$.ajax({
+		url: "moreSongs.json"
+	}).done(function(data){
+		console.log("Second Data is: ", data.MoreSongs);
+		$("#moreSongs").click(function(){
+			for(var i =0; i < data.MoreSongs.length; i++){
+			var indivSong = data.MoreSongs[i];
+			$("#indiv_songs").append("<p>"+indivSong.title+" - by "+indivSong.artist+" on the album "+indivSong.album+"<button class='deleteSong'>Delete</button></p>");
 
-songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
-songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
-songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
-songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
-songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
+			//connect each button to event listener
+			$(".deleteSong").click(function(){
+				$(this).parent().remove();
+			});
 
-//Each student must add one song to the beginning and the end of the array.
-songs.unshift("Levels - by Avivii on the album True");
-songs.push("Fractals - by Seven Lions on the album Days to Come");
-
-//Loop over the array and remove any words or characters that obviously don't belong.
-
-function outputSongs(){	
-		var targetDiv = document.getElementById("indiv_songs");
-		for (var i = 0; i < songs.length; i++){
-			songs[i] = songs[i].replace(/[^a-zA-Z" ">-]/g, "");
-			songs[i] = songs[i].replace(/[>]/g, "-");
-			console.log(songs[i]);
-			targetDiv.innerHTML += "<p>"+songs[i]+"</p>";
 		}
-}
+		$("#moreSongs").prop("disabled", true);
+		moreSongsWereAdded = true;
 
-outputSongs();
+		});
+	});
 
-//  Now, the entire container for the form should not be displayed when the user first visits your page. The song list with the corresponding form should be visible.
-// When the user clicks on "Add Music", the list view should be hidden, and the music form should show.
-// When the user clicks on "List Music", the music form should be hidden, and the list view should show.
-// Once the user fills out the song form and clicks the add button, you should collect all values from the input fields, add the song to your array of songs, and update the song list in the DOM.
+//functions
 
-//the following have been refactored to jquery
-	// var addMusic = document.getElementById("add_music");
-	// var listMusic = document.getElementById("list_music");
-	// var addBtn = document.getElementById("addBtn");
+	// loop over songs in json
+	function loopOverMySongObjects(data){
+		for(var i =0; i < data.songs.length; i++){
+			console.log(data.songs[i]);
+			var indivSong = data.songs[i];
+			$("#indiv_songs").append("<p>"+indivSong.title+" - by "+indivSong.artist+" on the album "+indivSong.album+"<button class='deleteSong'>Delete</button></p>");
 
-function showAdder(){
-	//refactored the following to jquery -->
-		// var inputDiv = document.getElementById("add_wrap");
-		// var songdiv = document.getElementById("main_music_wrap");
-		// inputDiv.classList.remove("add_vis");
-		// songdiv.classList.add("add_vis");
+			//connect each button to event listener
+			$(".deleteSong").click(function(){
+				$(this).parent().remove();
+			});
+		}
+	}
 
-	// $("#add_wrap").removeClass("add_vis");
-	// $("#main_music_wrap").addClass("add_vis");
-	$("#main_music_wrap").css("display", "none");
-	$("#add_wrap").fadeIn("slow");
-}
+	//When adding song, Create new object, push it into json array, and output --- main functionality when adding
+	function createNewObjectAndClear(data){ 
+			// console.log("son of a gun");
+			if($("#song_name").val() !== "" && $("#artist_name").val() !== "" && $("#album_name").val() !== ""){
+				var newObj = {
+					"title": $("#song_name").val(),
+					"artist":$("#artist_name").val(),
+					"album": $("#album_name").val()
+				}
+				data.songs.push(newObj);
+				// console.log(data.songs);
+				$("#indiv_songs").html("");
 
-function showList(){
-	//refactored the following to jquery -->
-		// var inputDiv = document.getElementById("add_wrap");
-		// var songdiv = document.getElementById("main_music_wrap");
-		// inputDiv.classList.add("add_vis");
-		// songdiv.classList.remove("add_vis");
+				//if user added more songs
+				if(moreSongsWereAdded === true){
+					//this is where I need to loop through both objects and output onto dom, then insert new song
+					console.log("there are more songs");
 
-	// $("#add_wrap").addClass("add_vis");
-	// // $("#main_music_wrap").removeClass("add_vis");
+				}else{
 
-	$("#add_wrap").css("display", "none");
-	$("#main_music_wrap").fadeIn("slow");
-}
+				for(var i =0; i < data.songs.length; i++){
+					console.log(data.songs[i]);
+					var indivSong = data.songs[i];
+					$("#indiv_songs").append("<p>"+indivSong.title+" - by "+indivSong.artist+" on the album "+indivSong.album+"<button class='deleteSong'>Delete</button></p>");
+					//connect each button to event listener
+					$(".deleteSong").click(function(){
+						$(this).parent().remove();
+					});
+					}
+				$("#add_wrap").css("display", "none");
+				$("#main_music_wrap").fadeIn("slow");
+				clearInputs();
+			}
+		}
 
-function clearInputs(){
-	//refactored the following to jquery -->
-		// document.getElementById("song_name").value = "";
-		// document.getElementById("artist_name").value = "";
-		// document.getElementById("album_name").value = "";
+	}
 
-		$("#song_name").val("");
-		$("#artist_name").val("");
-		$("#album_name").val("");
-}
 
-/* Once the user fills out the song form and clicks the add button, you should collect 
-   all values from the input fields, add the song to your array of songs, and update the song list in the DOM.*/
+	//Show add song panel 
+	function showAdder(){
+		$("#main_music_wrap").css("display", "none");
+		$("#add_wrap").fadeIn("slow");
+	}
 
-  function appendSong(){
-  	var songName = document.getElementById("song_name").value;
-  	var artistName = document.getElementById("artist_name").value;
-  	var albumName  = document.getElementById("album_name").value;
-  	var inputDiv = document.getElementById("add_wrap");
-	var songdiv = document.getElementById("main_music_wrap");
+	//Event handler to run function when user wants to add a song and clicks on Add Music
+	$("#add_music").click(function(){ showAdder(); });
 
-	// added jquery here
-  	if($("#song_name").val() !== "" && $("#artist_name").val() !== "" && $("#album_name").val() !== ""){
-  		songs = [];
-  		songs[songs.length] = $("#song_name").val() + " - by "+ $("#artist_name").val() +" on the album "+$("#album_name").val();
-  		outputSongs();
 
-  		clearInputs();
-
-  		//refactored the following to jquery -->
-			// inputDiv.classList.add("add_vis");
-			// songdiv.classList.remove("add_vis");
+	// Show view song list panel
+	function showList(){
 		$("#add_wrap").css("display", "none");
-		$("#main_music_wrap").fadeIn();
+		$("#main_music_wrap").fadeIn("slow");
+	}
 
-  	}
-  }
+	//Event hanfer to run function when user wants to view list of all songs
+	$("#list_music").click(function(){ showList(); });
 
 
-$("#add_music").click(function(){ showAdder(); });
-		// addMusic.addEventListener("click", showAdder);
-$("#list_music").click(function(){ showList(); });
-		// listMusic.addEventListener("click", showList);
-$("#addBtn").click(function(){ appendSong(); });
-		// addBtn.addEventListener("click", appendSong);
+
+	//Clear user inputs after adding song
+	function clearInputs(){
+			$("#song_name").val("");
+			$("#artist_name").val("");
+			$("#album_name").val("");
+	}
+
+
 
 
 });
