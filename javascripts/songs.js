@@ -57,7 +57,7 @@ var moreSongsWereAdded = false;
 			//push into new array to for when user adds songs after seeing more
 			secondArrObjects.push(indivSong);
 
-			$("#indiv_songs").append("<p>"+indivSong.title+" - by "+indivSong.artist+" on the album "+indivSong.album+"<button class='deleteSong'>Delete</button></p>");
+			$("#indiv_songs").append("<p>"+indivSong.title+" - by "+indivSong.artist+" on the album "+indivSong.album+"<button class='deleteSong btn btn-default'>Delete</button></p>");
 
 			//connect each button to event listener
 			$(".deleteSong").click(function(){
@@ -101,17 +101,17 @@ var moreSongsWereAdded = false;
 						$("#indiv_songs").html("");
 					for(var i = 0; i < firstArrObjects.length -1; i++){
 						$("#indiv_songs").append("<p>"+firstArrObjects[i].title+" - by "+firstArrObjects[i].artist+
-							" on the album "+firstArrObjects[i].album+"<button class='deleteSong'>Delete</button></p>");
+							" on the album "+firstArrObjects[i].album+"<button class='deleteSong btn btn-default'>Delete</button></p>");
 					}
 						//loop over and output second array
 					for(var i = 0; i < secondArrObjects.length; i++){
 						$("#indiv_songs").append("<p>"+secondArrObjects[i].title+" - by "+secondArrObjects[i].artist+
-							" on the album "+secondArrObjects[i].album+"<button class='deleteSong'>Delete</button></p>");
+							" on the album "+secondArrObjects[i].album+"<button class='deleteSong btn btn-default'>Delete</button></p>");
 					}	
 						//append newOBJ --> which is last object in first json array
 						console.log(newObj.title);
 					$("#indiv_songs").append("<p>"+newObj.title+" - by "+newObj.artist+
-							" on the album "+newObj.album+"<button class='deleteSong'>Delete</button></p>");
+							" on the album "+newObj.album+"<button class='deleteSong btn btn-default'>Delete</button></p>");
 					$("#add_wrap").css("display", "none");
 					$("#main_music_wrap").fadeIn("slow");
 					clearInputs();
@@ -121,7 +121,7 @@ var moreSongsWereAdded = false;
 					//connect each button to event listener
 					for(var i = 0; i < firstArrObjects.length; i++){
 						$("#indiv_songs").append("<p>"+firstArrObjects[i].title+" - by "+firstArrObjects[i].artist+
-							" on the album "+firstArrObjects[i].album+"<button class='deleteSong'>Delete</button></p>");
+							" on the album "+firstArrObjects[i].album+"<button class='deleteSong btn btn-default'>Delete</button></p>");
 					}
 
 					$(".deleteSong").click(function(){
