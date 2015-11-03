@@ -37,7 +37,7 @@ var moreSongsWereAdded = false;
 			//push into new array to for when user adds songs after seeing more
 			firstArrObjects.push(indivSong);
 
-			$("#indiv_songs").append("<p>"+indivSong.title+" - by "+indivSong.artist+" on the album "+indivSong.album+"<button class='deleteSong'>Delete</button></p>");
+			$("#indiv_songs").append("<p>"+indivSong.title+" - by "+indivSong.artist+" on the album "+indivSong.album+"<button class='deleteSong btn btn-default'>Delete</button></p>");
 
 			//connect each button to event listener
 			$(".deleteSong").click(function(){
@@ -129,7 +129,7 @@ var moreSongsWereAdded = false;
 					});
 					}
 				$("#add_wrap").css("display", "none");
-				$("#main_music_wrap").fadeIn("slow");
+				$("#m_holder").fadeIn("slow");
 				clearInputs();
 			}
 	}
@@ -138,7 +138,7 @@ var moreSongsWereAdded = false;
 
 	//Show add song panel 
 	function showAdder(){
-		$("#main_music_wrap").css("display", "none");
+		$("#m_holder").css("display", "none");
 		$("#add_wrap").fadeIn("slow");
 	}
 
@@ -151,7 +151,7 @@ var moreSongsWereAdded = false;
 	// Show view song list panel
 	function showList(){
 		$("#add_wrap").css("display", "none");
-		$("#main_music_wrap").fadeIn("slow");
+		$("#m_holder").fadeIn("slow");
 	}
 
 	//Event hanfer to run function when user wants to view list of all songs

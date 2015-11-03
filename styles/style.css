@@ -270,9 +270,14 @@ header{
 
 }
 
+#m_holder{
+	padding-top: 100px;
+}
+
 #sidebarLeft{
-background-color: rgba(52, 152, 219, 0.43);
-border-radius: 5px; 
+	background-color: rgba(52, 152, 219, 0.43);
+	border-radius: 5px; 
+	padding: 20px 0px
 }
 
 #sidebarRight{
@@ -290,8 +295,26 @@ border-radius: 5px;
 	background-color: rgba(52, 164, 219, 0.74);	
 }
 
-#sidebarRight li{
+#sidebarRight p:first-of-type{
+	/*margin-top: 20px;*/
+	border-radius: 5px 5px 0px 0px;
 }
 
+#sidebarRight p:last-of-type{
+	/*margin-top: 20px;*/
+	border-radius: 0px 0px 5px 5px;
+}
+
+.deleteSong{
+	position: absolute;
+	right: 10px;
+	margin-top: -7px;
+}
+
+#moreSongs{
+	width: 40%;
+	margin-left: 30%;
+	margin-top: 20px; 
+}
 
 
