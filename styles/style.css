@@ -1,3 +1,10 @@
+html{
+	/*background-color: red;
+	padding-bottom: 200px;
+	margin-top: -50px;*/
+
+}
+
 body{
 	margin: 0px;
 }
@@ -236,10 +243,6 @@ header{
 }
 */
 
-html{
-	background-color: red;
-}
-
 .header_text{
 	font-family: sans-serif;
 	font-size: 1.2rem;
@@ -260,6 +263,35 @@ html{
 	margin-top: 200px;
 }
 
+#tester{
+	background-color: black;
+	padding-top: 70px;
+	display: block;
+
+}
+
+#sidebarLeft{
+background-color: rgba(52, 152, 219, 0.43);
+border-radius: 5px; 
+}
+
+#sidebarRight{
+	border-radius: 5px;
+	padding: 0px;
+}
+
+#sidebarRight p{
+	background-color: rgba(52, 152, 219, 0.43);
+	margin: 0px;
+	padding: 20px 5px 20px 5px; 
+}
+
+#sidebarRight p:nth-of-type(2n+1){
+	background-color: rgba(52, 164, 219, 0.74);	
+}
+
+#sidebarRight li{
+}
 
 
 

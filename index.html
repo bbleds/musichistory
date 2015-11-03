@@ -8,73 +8,92 @@
   <title>NSS Starter Kit</title>
 </head>
 <body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Get The Beats</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ><a href="#">Profile <span class="sr-only">(current)</span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Songs <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li id="list_music"><a href="#">List Music</a></li>
+            <li id="add_music"><a href="#">Add Music</a></li>
+          </ul>
+        </li>
+      </ul>	
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
 	<div id="main_container">
-		<header id="nav_hold">
+		<!-- <header id="nav_hold">
 			<nav id="nav_bar">
 			<img src="http://www2.psd100.com/ppp/2013/10/0501/play-music-icon-1005000834.png">
 				<ul>	
 					<li class="header_text" id="list_music"><a href="#">List Music</a></li>
-					<li class="header_text" id="add_music"><a href="#">Add Music</a></li>
+					<li class="header_text" id="add_music"><a href="#">Add Music</a></li> -->
 					<!-- <li class="header_text"><a href="#">Profile</a></li> -->
-				</ul>
+				<!--</ul> 
 			</nav>
-		</header>
-		<div id="sidebars_holder">
+		</header -->
+		<div id="m_holder" class="fluid-container">
+			<div class="row">
+				 <div id="sidebarLeft" class="col-md-3 col-md-offset-1">
+				 	<label for="song_length">Song Length:</label>
+					<input type="range" name="song_length">		
+					<label for="artist">Artist:</label>
+					<select name="artist" id="ar_select">
+						<option>Rush</option>
+						<option>Guns N' Roses</option>
+						<option>Seven Lions</option>
+						<option>Avicii</option>
+						<option>Bon Jovi</option>
+					</select>
+					<label for="album">Artist:</label>
+					<select name="album" id="al_select">
+						<option>Permanent Waves</option>
+						<option>Appetite for Destruction</option>
+						<option>Days to Come</option>
+						<option>True</option>
+						<option>Slippery When Wet</option>
+					</select>
+					<label for="Genre">Genre:</label>
+					<div id="checkbox_holder">
+						<div id="left_checks">
+							<li class="checker"><input type="checkbox" name="rock" value="rock">Rock </li>
+							<li><input type="checkbox" name="classical" value="classical" class="right_item">Classical</li>
+							<li class="checker"><input type="checkbox" name="pop" value="pop">Pop </li>
+						</div> <!-- end left_checks -->
+						<div id="right_checks">
+							<li><input type="checkbox" name="jazz" value="jazz" class="right_item">Jazz</li>
+							<li class="checker"><input type="checkbox" name="blues" value="blues">Blues</li>
+							<li><input type="checkbox" name="hip-hop" value="hip-hop" class="right_item">Hip-Hop</li>
+						</div> <!-- end right_checks -->
+					</div><!-- end checbox holder -->
+					<button id="filter_me">Filter</button>
+				</div><!-- end sidebarTest -->
 
-		<!-- Add a DOM element that contains some input fields for the user to enter in the name of a song, the artist for the song, and the album. You do not need to enclose them in a <form> element because we're not actually submitting this form anywhere. -->
-		<div id="add_wrap" class="add_vis">
-					<li class="music_selector"><label class="inline">Song Name</label><input type="text" id="song_name" name="song_name"></li>
-					<li class="music_selector"><label class="inline" for="artist_name">Artist Name</label><input  type="text" id="artist_name" name="artist_name"></li>
-					<li class="music_selector"><label class="inline" for="album_name">Album Name</label><input type="text" id="album_name" name="album_name"></li>
-					<li class="music_selector"><button id="addBtn" class="add_music"> Add</button></li>
-				</div> <!-- end add_wrap -->
-		<div id="main_music_wrap">
-			<div id="main_left_sidebar">
-			  <!-- <form id="filter_form"> -->
-				<label for="song_length">Song Length:</label>
-				<input type="range" name="song_length">		
-				<label for="artist">Artist:</label>
-				<select name="artist" id="ar_select">
-					<option>Rush</option>
-					<option>Guns N' Roses</option>
-					<option>Seven Lions</option>
-					<option>Avicii</option>
-					<option>Bon Jovi</option>
-				</select>
-				<label for="album">Artist:</label>
-				<select name="album" id="al_select">
-					<option>Permanent Waves</option>
-					<option>Appetite for Destruction</option>
-					<option>Days to Come</option>
-					<option>True</option>
-					<option>Slippery When Wet</option>
-				</select>
-				<label for="Genre">Genre:</label>
-				<div id="checkbox_holder">
-					<div id="left_checks">
-						<li class="checker"><input type="checkbox" name="rock" value="rock">Rock </li>
-						<li><input type="checkbox" name="classical" value="classical" class="right_item">Classical</li>
-						<li class="checker"><input type="checkbox" name="pop" value="pop">Pop </li>
-					</div> <!-- end left_checks -->
-					<div id="right_checks">
-						<li><input type="checkbox" name="jazz" value="jazz" class="right_item">Jazz</li>
-						<li class="checker"><input type="checkbox" name="blues" value="blues">Blues</li>
-						<li><input type="checkbox" name="hip-hop" value="hip-hop" class="right_item">Hip-Hop</li>
-					</div> <!-- end right_checks -->
-				</div><!-- end checbox holder -->
-				<button id="filter_me">Filter</button>
-			  <!-- </form> -->
-			</div><!-- end main_left_sidebar -->
-
-			<div id="main_right_sidebar">
-				<div id="indiv_songs">
+				<div id="sidebarRight" class="col-md-5 col-md-offset-1">
+				 	<div id="indiv_songs">
 				
 				</div><!-- end indiv_songs -->
 				<button id="moreSongs">More</button>
-			</div><!-- end main_right_sidebar -->
-
-		</div><!-- end main music wrap -->
-		</div> <!-- end sidebars_holder -->
+				</div><!-- end sidebarTTESTTwo -->
+			</div>
+		</div><!-- end m_holder -->
+		
 		<div id="song_hold"></div>
 	</div> <!-- end main_container -->
 	<script src="./lib/bower_components/jquery/dist/jquery.min.js"></script>
