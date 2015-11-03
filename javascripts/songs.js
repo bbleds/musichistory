@@ -14,7 +14,7 @@ var moreSongsWereAdded = false;
 		loopOverMySongObjects(data);
 
 		// Add event listener and connection to function
-		$("#addBtn").click(function(){ createNewObjectAndClear(data) });
+		$("#addBtn").click(function(){ createNewObjectAndClear(data); });
 
 	});
 
@@ -39,11 +39,12 @@ var moreSongsWereAdded = false;
 
 			$("#indiv_songs").append("<p>"+indivSong.title+" - by "+indivSong.artist+" on the album "+indivSong.album+"<button class='deleteSong btn btn-default'>Delete</button></p>");
 
+			
+			}
 			//connect each button to event listener
 			$(".deleteSong").click(function(){
 				$(this).parent().remove();
 			});
-		}
 	}
 
 	//	loop over second object list
@@ -59,14 +60,15 @@ var moreSongsWereAdded = false;
 
 			$("#indiv_songs").append("<p>"+indivSong.title+" - by "+indivSong.artist+" on the album "+indivSong.album+"<button class='deleteSong btn btn-default'>Delete</button></p>");
 
-			//connect each button to event listener
-			$(".deleteSong").click(function(){
-				$(this).parent().remove();
-			});
 
 		}
 		$("#moreSongs").prop("disabled", true);
 		moreSongsWereAdded = true;
+
+			//connect each button to event listener
+			$(".deleteSong").click(function(){
+				$(this).parent().remove();
+			});
 
 		});
 	}
@@ -80,7 +82,7 @@ var moreSongsWereAdded = false;
 					"title": $("#song_name").val(),
 					"artist":$("#artist_name").val(),
 					"album": $("#album_name").val()
-				}
+				};
 				// data.songs.push(newObj);
 				firstArrObjects.push(newObj);
 				console.log("first array is ",firstArrObjects);
@@ -104,9 +106,9 @@ var moreSongsWereAdded = false;
 							" on the album "+firstArrObjects[i].album+"<button class='deleteSong btn btn-default'>Delete</button></p>");
 					}
 						//loop over and output second array
-					for(var i = 0; i < secondArrObjects.length; i++){
-						$("#indiv_songs").append("<p>"+secondArrObjects[i].title+" - by "+secondArrObjects[i].artist+
-							" on the album "+secondArrObjects[i].album+"<button class='deleteSong btn btn-default'>Delete</button></p>");
+					for(var n = 0; n < secondArrObjects.length; n++){
+						$("#indiv_songs").append("<p>"+secondArrObjects[n].title+" - by "+secondArrObjects[n].artist+
+							" on the album "+secondArrObjects[n].album+"<button class='deleteSong btn btn-default'>Delete</button></p>");
 					}	
 						//append newOBJ --> which is last object in first json array
 						console.log(newObj.title);
@@ -119,9 +121,9 @@ var moreSongsWereAdded = false;
 				} else {
 					console.log(firstArrObjects);
 					//connect each button to event listener
-					for(var i = 0; i < firstArrObjects.length; i++){
-						$("#indiv_songs").append("<p>"+firstArrObjects[i].title+" - by "+firstArrObjects[i].artist+
-							" on the album "+firstArrObjects[i].album+"<button class='deleteSong btn btn-default'>Delete</button></p>");
+					for(var x = 0; x < firstArrObjects.length; x++){
+						$("#indiv_songs").append("<p>"+firstArrObjects[x].title+" - by "+firstArrObjects[x].artist+
+							" on the album "+firstArrObjects[x].album+"<button class='deleteSong btn btn-default'>Delete</button></p>");
 					}
 
 					$(".deleteSong").click(function(){
