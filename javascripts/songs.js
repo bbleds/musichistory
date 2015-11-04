@@ -1,10 +1,21 @@
-//set the height of container to height of screen
+define(["jquery", "populate-songs"], function($, populateSongs){
+	
+
+
+	//private variables
+	var firstArrObjects=[];
+	var secondArrObjects=[];
+	var moreSongsWereAdded = false;
+
+
+	//set the height of container to height of screen
 	$("#main_container").css("height", $(window).height());
 
 //set height on resize
 	$(window).resize(function(){
 		$("#main_container").css("height", $(window).height());
 	});
+
 
 	//scroll event handlers for y postion 
 	$(window).scroll(function(){
@@ -19,30 +30,22 @@
 	});
 
 
-
-
 //Need to place inside of a click function
 // FirebaseLibrary.push("TestString");
 
-var firstArrObjects=[];
-var secondArrObjects=[];
 
-$(document).ready(function(){
+	console.log("pop songs", populateSongs);
+//Old Ajax call
+	// $.ajax({
+	// 	url: "songsList.json"
+	// }).done(function(data){
 
-var moreSongsWereAdded = false;
+	// 	loopOverMySongObjects(data);
 
+	// 	// Add event listener and connection to function
+	// 	$("#addBtn").click(function(){ createNewObjectAndClear(data); });
 
-//Ajax call
-	$.ajax({
-		url: "songsList.json"
-	}).done(function(data){
-
-		loopOverMySongObjects(data);
-
-		// Add event listener and connection to function
-		$("#addBtn").click(function(){ createNewObjectAndClear(data); });
-
-	});
+	// });
 
 
 	//Ajax call for the extra songs
@@ -51,9 +54,10 @@ var moreSongsWereAdded = false;
 	}).done(function(data){
 		showExtraSongs(data);
 	});
+//New modular ajax call
+		populateSongs.getSongData();
 
 //functions
-
 	// loop over default songs in json
 	function loopOverMySongObjects(data){
 		for(var i =0; i < data.songs.length; i++){
@@ -72,37 +76,38 @@ var moreSongsWereAdded = false;
 				$(this).parent().remove();
 			});
 	}
-
+ // });
 	//	loop over second object list
 	function showExtraSongs(data){
 		console.log("Second Data is: ", data.MoreSongs);
 		$("#moreSongs").click(function(){
 
 			//set the height of container to height of screen
-	$("#main_container").css("height", $(window).height()+300);
 
-//set height on resize
-	$(window).resize(function(){
-		$("#main_container").css("height", $(window).height()+300);
-	});
+			$("#main_container").css("height", $(window).height()+300);
 
-				for(var i =0; i < data.MoreSongs.length; i++){
-			var indivSong = data.MoreSongs[i];
+			//set height on resize
+				$(window).resize(function(){
+					$("#main_container").css("height", $(window).height()+300);
+				});
 
-			//push into new array to for when user adds songs after seeing more
-			secondArrObjects.push(indivSong);
+					for(var i =0; i < data.MoreSongs.length; i++){
+						var indivSong = data.MoreSongs[i];
 
-			$("#indiv_songs").append("<p>"+indivSong.title+" - by "+indivSong.artist+" on the album "+indivSong.album+"<button class='deleteSong btn btn-default'>Delete</button></p>");
+						//push into new array to for when user adds songs after seeing more
+						secondArrObjects.push(indivSong);
+
+						$("#indiv_songs").append("<p>"+indivSong.title+" - by "+indivSong.artist+" on the album "+indivSong.album+"<button class='deleteSong btn btn-default'>Delete</button></p>");
 
 
-		}
-		$("#moreSongs").prop("disabled", true);
-		moreSongsWereAdded = true;
+					}
+				$("#moreSongs").prop("disabled", true);
+				moreSongsWereAdded = true;
 
-			//connect each button to event listener
-			$(".deleteSong").click(function(){
-				$(this).parent().remove();
-			});
+				//connect each button to event listener
+				$(".deleteSong").click(function(){
+					$(this).parent().remove();
+				});
 
 		});
 	}
@@ -163,14 +168,12 @@ var moreSongsWereAdded = false;
 					$(".deleteSong").click(function(){
 						$(this).parent().remove();
 					});
-					}
+				}
 				$("#add_wrap").css("display", "none");
 				$("#m_holder").fadeIn("slow");
 				clearInputs();
 			}
 	}
-
-
 
 	//Show add song panel 
 	function showAdder(){
@@ -178,11 +181,12 @@ var moreSongsWereAdded = false;
 		$("#add_wrap").fadeIn("slow");
 	}
 
-
 	/* Event handler to run function when user wants to add a song and clicks on 
 	Add Music ---> ONLY SHOWS THE PANEL DOESN'T Handle add functionality  */
-	$("#add_music").click(function(){ showAdder(); });
-
+	$("#add_music").click(
+		function(){ 
+			showAdder(); 
+		})	;
 
 	// Show view song list panel
 	function showList(){
@@ -191,9 +195,10 @@ var moreSongsWereAdded = false;
 	}
 
 	//Event hanfer to run function when user wants to view list of all songs
-	$("#list_music").click(function(){ showList(); });
-
-
+	$("#list_music").click(
+		function(){ 
+			showList(); 
+		});
 
 	//Clear user inputs after adding song
 	function clearInputs(){
@@ -202,14 +207,6 @@ var moreSongsWereAdded = false;
 			$("#album_name").val("");
 	}
 
-
-
-
+		
 });
-
-
-
-
-
-
 
