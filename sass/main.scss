@@ -1,7 +1,225 @@
-$font-stack:    Helvetica, sans-serif;
+$font-stack:    sans-serif, Helvetica;
 $primary-color: #333;
+$nill_margs_n_pad: margin 0px;
 
-body {
-  font: 100% $font-stack;
+
+//extends
+.nill_margs_n_pad{
+	margin: 0px;
+	padding: 0px
+}
+
+.transition-duration-effects{
+	trasition-duration: .5s;
+	-webkit-transition-duration: .5s;
+}
+
+*{
+	background-color: none;
+}
+
+body{
+   @extend .nill_margs_n_pad;
+  font: $font-stack;
   color: $primary-color;
 }
+
+label{
+	padding-left: 10%;
+	display: block;	
+	color: black;
+}
+
+input[type="range"]{
+	width: 80%;
+	height: 40px;
+	display: block;
+	margin: auto;
+	background-color: white;
+}
+
+.navbar-default{
+	background-color: transparent;
+	border: 0px solid transparent;
+	@extend .transition-duration-effects;
+
+	.navbar-brand{
+		color: white;
+	}
+
+	.navbar-nav>li>a{
+		color: white;
+	}
+}
+
+#ar_select{
+	width: 70%;
+	display: block;
+	margin: auto;
+	margin: 10px auto;
+}
+
+
+#al_select{
+	width: 70%;
+	display: block;
+	margin: auto;
+	margin: 10px auto;
+}
+
+#checkbox_holder{
+	display: block;
+	width: 63%;
+	margin: 10px auto;
+	color: white;
+
+	input[type="checkbox"] {
+		font-size: 1.3rem;
+		margin-right: 10px;
+	}
+
+	li{
+		list-style: none;
+	}
+
+	#left_checks, #right_checks{
+		display: inline-block;
+		width: 45%;
+		font-size: 1rem;
+	}
+
+
+}
+
+
+#filter_me{
+		width: 34%;
+		display: block;
+		margin-left: 32%;
+		margin-top: 30px;
+		height: 45px;
+		border: none;
+		background-color: white;
+	}
+
+.music_selector{
+	list-style-type: none;
+	margin: 10px;
+	display: block;
+	text-align: center;
+	color: white;
+	font-family: sans-serif;
+	font-size: 1.8rem;
+	font-weight: 100;
+	margin-bottom: 30px;
+}
+
+.add_music{
+	width: 55px;
+}
+
+.add_vis{
+	display: none;
+}
+
+.add_music{
+	width: 120px;
+	height: 40px;
+	color: white;
+	background-color: rgba(52, 152, 219, 0.76);
+	border: 0px;
+	font-size: 1.6rem;
+	border-radius: 3px;
+}
+
+
+#main_container{
+	background-image: url("https://images.unsplash.com/photo-1420161900862-9a86fa1f5c79?q=80&fm=jpg&w=1080&fit=max&s=f216ee281145471d2736b1dd3ec70d3d");
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding-bottom: 100px;
+	background-position: center center;
+	padding-top: 150px;
+
+}
+
+
+#m_holder{
+
+	p{
+		color: white;
+	}
+
+	label{
+		color: white;
+	}
+
+	#sidebarLeft{
+	background-color: rgba(52, 152, 219, 0.43);
+	border-radius: 5px; 
+	padding: 20px 0px
+	}
+
+	#sidebarRight{
+		border-radius: 5px;
+		padding: 0px;
+	}
+
+	#sidebarRight p{
+		background-color: rgba(52, 152, 219, 0.43);
+		margin: 0px;
+		padding: 20px 5px 20px 5px; 
+	}
+
+	#sidebarRight p:nth-of-type(2n+1){
+		background-color: rgba(52, 164, 219, 0.74);	
+	}
+
+	#sidebarRight p:first-of-type{
+		/*margin-top: 20px;*/
+		border-radius: 5px 5px 0px 0px;
+	}
+
+	#sidebarRight p:last-of-type{
+		/*margin-top: 20px;*/
+		border-radius: 0px 0px 5px 5px;
+	}
+
+	.deleteSong{
+		position: absolute;
+		right: 10px;
+		margin-top: -7px;
+	}
+
+	#moreSongs{
+		width: 20%;
+		margin-left: 40%;
+		margin-top: 20px; 
+	}
+
+
+	button{
+		color: rgba(49, 49, 49, 0.76);
+		font-size: 1.3rem;
+
+	}
+}
+
+
+.add_width{
+	width: 30%;
+	margin-left: 35%;
+}
+
+#add_wrap label{
+	padding-left: 0px; 
+	color: white;
+}
+
+
+
+
+
+
+

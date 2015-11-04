@@ -1,3 +1,29 @@
+//set the height of container to height of screen
+	$("#main_container").css("height", $(window).height());
+
+//set height on resize
+	$(window).resize(function(){
+		$("#main_container").css("height", $(window).height());
+	});
+
+	//scroll event handlers for y postion 
+	$(window).scroll(function(){
+		var ypos = window.pageYOffset;
+		console.log("ypos", ypos);
+		if(ypos >= 88){
+			$(".navbar-default").css("backgroundColor", "rgba(0, 0, 0, 0.82)");
+		} else {
+			$(".navbar-default").css("backgroundColor", "transparent");
+		}
+
+	});
+
+
+
+
+//Need to place inside of a click function
+// FirebaseLibrary.push("TestString");
+
 var firstArrObjects=[];
 var secondArrObjects=[];
 
@@ -51,6 +77,14 @@ var moreSongsWereAdded = false;
 	function showExtraSongs(data){
 		console.log("Second Data is: ", data.MoreSongs);
 		$("#moreSongs").click(function(){
+
+			//set the height of container to height of screen
+	$("#main_container").css("height", $(window).height()+300);
+
+//set height on resize
+	$(window).resize(function(){
+		$("#main_container").css("height", $(window).height()+300);
+	});
 
 				for(var i =0; i < data.MoreSongs.length; i++){
 			var indivSong = data.MoreSongs[i];
