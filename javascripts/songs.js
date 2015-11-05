@@ -1,12 +1,15 @@
-var firstArrObjects=[];
-var secondArrObjects=[];
+define(["jquery", "manipulate"], function($, manipulate){
 
-$(document).ready(function(){
+//vars are now stored inside manipulate
+		// var firstArrObjects=[];
+		// var secondArrObjects=[];
+		// var moreSongsWereAdded = false;
+	//check if manipulate.js is linked right
+		console.log("Manip is below ");
+		console.log(manipulate.getFirstArray());
 
-var moreSongsWereAdded = false;
 
-
-//Ajax call
+//Ajax call --> first call will now be in populate-songs.js
 	$.ajax({
 		url: "songsList.json"
 	}).done(function(data){
@@ -166,11 +169,7 @@ var moreSongsWereAdded = false;
 			$("#album_name").val("");
 	}
 
-
-
-
 });
-
 
 
 
