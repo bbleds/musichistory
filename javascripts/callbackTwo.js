@@ -8,6 +8,8 @@ define(["jquery"], function($){
 		console.log("Second Data is: ", data.MoreSongs);
 		$("#moreSongs").click(function(){
 
+			//hbs should be handled here
+
 			for(var i =0; i < data.MoreSongs.length; i++){
 			var indivSong = data.MoreSongs[i];
 

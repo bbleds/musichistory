@@ -6,6 +6,10 @@ define(["jquery", "manipulate"], function($, manipulate){
 		console.log("inside callback");
 		console.log(data);
 
+
+
+		//hbs should be handled here
+
 		//below needs to be my reference to handlebars?
 		for(var i =0; i < data.songs.length; i++){
 			console.log("sonnnngggyyy");
