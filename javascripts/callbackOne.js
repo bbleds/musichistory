@@ -7,7 +7,7 @@ define(["jquery", "manipulate"], function($, manipulate){
 		console.log(data);
 
 
-
+		//require();
 		//hbs should be handled here
 
 		//below needs to be my reference to handlebars?
