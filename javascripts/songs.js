@@ -1,5 +1,5 @@
-define(["jquery", "manipulate", "populate-songs", "addSongFunctionality", "get-more-songs"], 
-	function($, manipulate, populateSongs, addSongF, getMoreSongs){
+define(["jquery", "manipulate", "populate-songs", "addSongFunctionality", "get-more-songs", "deleteSong"], 
+	function($, manipulate, populateSongs, addSongF, getMoreSongs, deleteSong){
 
 
 //Ajax call --> first call will now be in populate-songs.js
