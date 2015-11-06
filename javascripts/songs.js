@@ -1,15 +1,46 @@
 define(["jquery", "manipulate", "populate-songs", "addSongFunctionality", "get-more-songs", "deleteSong"], 
 	function($, manipulate, populateSongs, addSongF, getMoreSongs, deleteSong){
 
+//Main logic of app
 
-//Ajax call --> first call will now be in populate-songs.js
-	populateSongs.getInitialSongs();
+	//Navbar functionality for fade-in on scroll --> 
+		//set the height of container to height of screen
+			$("#main_container").css("height", $(window).height());
+
+		//set height on resize
+			$(window).resize(function(){
+				$("#main_container").css("height", $(window).height());
+			});
+
+
+		//scroll event handlers for y postion 
+			$(window).scroll(function(){
+				var ypos = window.pageYOffset;
+				console.log("ypos", ypos);
+				if(ypos >= 88){
+					$(".navbar-default").css("backgroundColor", "rgba(0, 0, 0, 0.82)");
+				} else {
+					$(".navbar-default").css("backgroundColor", "transparent");
+				}
+			});
+	// end nav functionality
+
+
+
+
+
+
+	//Ajax call --> first call will now be in populate-songs.js
+		populateSongs.getInitialSongs();
 
 	//add event listener for handling adding songs
-	$("#addBtn").click(function(){ addSongF.createNewObjectAndClear() });	
+		//pass in addSongFunctionality object that is passed in above from that file
+			//call the createNewObjectAndClear method that is built in on that object
+				//this attaches event handler for adding songs
+		$("#addBtn").click(function(){ addSongF.createNewObjectAndClear() });	
 
 	//Ajax call get-more-songs.json
-	getMoreSongs.getSecondSongs();
+		getMoreSongs.getSecondSongs();
 
 
 //functions

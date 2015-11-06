@@ -1,6 +1,7 @@
 define(["jquery", "manipulate", "deleteSong"], function($, manipulate, deleteSong){
 
 	//return first ajax callback function below
+	//handles output functionality by passing to handlebars
 
 	return	function(data){
 		console.log("inside callback");
