@@ -1,20 +1,14 @@
-define(["jquery", "manipulate"], function($, manipulate){
+define(["jquery", "manipulate", "callbackOne"], function($, manipulate, callbackOne){
 
 	//define first ajax call below
+		//the only call needed below is the ajax call, define callback somewhere else
 
 	return {
 		getInitialSongs : function(){
 		$.ajax({
 				url: "songsList.json"
-				
-			}).done(function(data){
-
-				loopOverMySongObjects(data);
-
-				// Add event listener and connection to function
-				$("#addBtn").click(function(){ createNewObjectAndClear(data) });
-
-			});
+				//pass data to callbackOne function reference
+			}).done(callbackOne);
 		}
 
 	}
