@@ -159,6 +159,9 @@ input[type="range"]{
 	background-color: rgba(52, 152, 219, 0.43);
 	border-radius: 5px; 
 	padding: 20px 0px
+		button{
+			width: 100%;
+		}
 	}
 
 	#sidebarRight{
@@ -217,6 +220,9 @@ input[type="range"]{
 	color: white;
 }
 
+#artist-btn {
+			display: block;
+}
 
 
 

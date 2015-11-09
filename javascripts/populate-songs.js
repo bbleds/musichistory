@@ -11,6 +11,6 @@ define(["jquery", "manipulate", "callbackOne"], function($, manipulate, callback
 			}).done(callbackOne);
 		}
 
-	}
+	};
 
 });

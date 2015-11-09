@@ -13,7 +13,7 @@ define(["jquery", "manipulate", "callbackTwo"],
 
 		}
 
-	}
+	};
 	
 
 });

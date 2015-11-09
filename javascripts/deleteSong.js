@@ -6,6 +6,6 @@ define(["jquery"],
 					$(".deleteSong").click(function(){
 					$(this).parent().remove();
 			 	});
-		}
+		};
 
-})
+});

@@ -111,7 +111,8 @@ input[type="range"] {
 #m_holder #sidebarLeft {
   background-color: rgba(52, 152, 219, 0.43);
   border-radius: 5px;
-  padding: 20px 0px; }
+  padding: 20px 0px button;
+    padding-width: 100%; }
 #m_holder #sidebarRight {
   border-radius: 5px;
   padding: 0px; }
@@ -146,5 +147,8 @@ input[type="range"] {
 #add_wrap label {
   padding-left: 0px;
   color: white; }
+
+#artist-btn {
+  display: block; }
 
 /*# sourceMappingURL=main.css.map */

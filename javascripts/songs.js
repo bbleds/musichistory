@@ -1,5 +1,5 @@
-define(["jquery", "manipulate", "populate-songs", "addSongFunctionality", "get-more-songs", "deleteSong"], 
-	function($, manipulate, populateSongs, addSongF, getMoreSongs, deleteSong){
+define(["jquery", "manipulate", "populate-songs", "addSongFunctionality", "get-more-songs", "deleteSong", "artist_btn"], 
+	function($, manipulate, populateSongs, addSongF, getMoreSongs, deleteSong, artBtn){
 
 //Main logic of app
 
@@ -26,7 +26,9 @@ define(["jquery", "manipulate", "populate-songs", "addSongFunctionality", "get-m
 	// end nav functionality
 
 
+	//call artist and album button population
 
+	artBtn.addArtists();
 
 
 
@@ -37,7 +39,7 @@ define(["jquery", "manipulate", "populate-songs", "addSongFunctionality", "get-m
 		//pass in addSongFunctionality object that is passed in above from that file
 			//call the createNewObjectAndClear method that is built in on that object
 				//this attaches event handler for adding songs
-		$("#addBtn").click(function(){ addSongF.createNewObjectAndClear() });	
+		$("#addBtn").click(function(){ addSongF.createNewObjectAndClear(); });	
 
 	//Ajax call get-more-songs.json
 		getMoreSongs.getSecondSongs();

@@ -49,8 +49,24 @@
 			<div class="row">
 				 <div id="sidebarLeft" class="col-md-3 col-md-offset-1">
 				 	<label for="song_length">Song Length:</label>
-					<input type="range" name="song_length">		
-					<label for="artist">Artist:</label>
+					<input type="range" name="song_length">	
+					 <!-- Single button -->
+						<div id="artist-btn" class="btn-group btn-block">
+						  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Artists <span class="caret"></span>
+						  </button>
+						  <ul id="artists_here" class="dropdown-menu">
+						  </ul>
+						</div>	
+
+						<div id="album-btn" class="btn-group btn-block">
+						  <button type="button" class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Albums <span class="caret"></span>
+						  </button>
+						  <ul id="albums_here" class="dropdown-menu">
+						  </ul>
+						</div>	
+					<!-- <label for="artist">Artist:</label>
 					<select name="artist" id="ar_select">
 						<option>Rush</option>
 						<option>Guns N' Roses</option>
@@ -65,7 +81,7 @@
 						<option>Days to Come</option>
 						<option>True</option>
 						<option>Slippery When Wet</option>
-					</select>
+					</select> -->
 					<label for="Genre">Genre:</label>
 					<div id="checkbox_holder">
 						<div id="left_checks">

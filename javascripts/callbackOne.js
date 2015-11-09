@@ -16,7 +16,7 @@ define(["jquery", "manipulate", "deleteSong"], function($, manipulate, deleteSon
 	      deleteSong();
 	    });
 
-	}
+	};
 
 
 

@@ -1,43 +1,63 @@
 {
-	"songs": [
-	{
+	"songs": {
+
+	"levels": {
 		"title": "Levels",
 		"artist": "Avivii",
 		"album": "True"
 	},
 
-	{
+	"legs": {
 		"title": "Legs",
 		"artist": "ZZTop",
 		"album": "Eliminator"
 	},
 
-	{
+	"logical" : {
 		"title": "The Logical Song",
 		"artist": "Supertramp",
 		"album": "Breakfast in America"
 	},
+	
+	"brick":
 	{
 		"title": "Another Brick in the Wall",
 		"artist": "Pink Floyd",
 		"album": "The Wall"
 	},
+	"jungle":
 	{
 		"title": "Welcome to the Jungle",
 		"artist": "Guns 'N Roses",
 		"album": "Appetite for Destruction"
 	},
-	{
+	"ironic":{
 		"title": "Ironic",
 		"artist": "Alanis Morisette",
 		"album": "Jagged Little Pill"
 	},
+	"fractals":
 	{
 		"title": "Fractals",
 		"artist": "Seven Lions",
 		"album": "Days to Come"
+	},
+
+	"sharp":{
+	  "title": "Sharp Dressed Man", 
+      "artist": "ZZ Top",
+      "album": "Eliminator"
+	},
+
+	"goodbyemary": {
+	  "title": "Goodbye Mary", 
+      "artist": "Supertramp",
+      "album": "Breakfast in America"
+	},
+
+	"wayward": {
+	  "title": "Carry on My Wayward Son", 
+      "artist": "Kansas",
+      "album": "Overture"
 	}
-
-
-		]
 }

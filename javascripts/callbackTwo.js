@@ -23,5 +23,5 @@ define(["jquery", "deleteSong"], function($, deleteSong){
 		});
 
 
-	}
+	};
 });
