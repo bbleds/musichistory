@@ -12,10 +12,10 @@ return	function(data){
 				//loop through songs and store ones that will match inside of arrayOfSongs
 				for(var key in data.songs){
 									
-					if (data.songs[key].album.toLowerCase() === manipulate.getPublicAlbum()) {
-						console.log("mushshshshsh");
-						console.log(key);
-						console.log(data.songs[key]);
+					if (data.songs[key].artist.toLowerCase() === manipulate.getPublicArtist()) {
+						// console.log("mushshshshsh");
+						// console.log(key);
+						// console.log(data.songs[key]);
 						var filteredSongs = data.songs[key];
 						arrayOfSongs.push(filteredSongs);
 
@@ -23,7 +23,7 @@ return	function(data){
 				}
 
 				//for each object inside array Of Songs, output it
-					require(["hbs!../templates/filterAlbums"], function(songTemplate){
+					require(["hbs!../templates/filterArtists"], function(songTemplate){
 							console.log("array of songs");
 								console.log(arrayOfSongs);
 		 	 				$("#indiv_songs").append(songTemplate(arrayOfSongs));
@@ -34,11 +34,4 @@ return	function(data){
 				console.log(arrayOfSongs);
 			}
 
-		});
-
-
-
-//push filtered songs into an array of objects,
-//loop over that array of objects
-//output each with handlebars
-//I will need an each inside handlebars file
+});

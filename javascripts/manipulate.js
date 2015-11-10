@@ -1,25 +1,26 @@
 define(["jquery"], function($){
 	//private vars
-	var firstArrObjects=[];
+	var keyArrObjects=[];
 	var secondArrObjects=[];
 	var moreSongsWereAdded = false;
 	var publicAlbum; 
 	var publicArtist;
+	var publicKey;
 
 
 	//public interface
 
 	return{
-		getFirstArray : function(){
-			return firstArrObjects;
+		getKeyArray : function(){
+			return keyArrObjects;
 		},
 
-		resetFirstArray : function(value){
-			firstArrObjects = value;
+		resetKeyArray : function(value){
+			keyArrObjects = value;
 		},
 
-		pushFirstArray : function(item){
-			firstArrObjects.push(item);
+		pushKeyArray : function(item){
+			keyArrObjects.push(item);
 		},
 
 		getSecondArray : function(){
@@ -48,6 +49,22 @@ define(["jquery"], function($){
 
 		setPublicAlbum: function(value){
 			publicAlbum = value;
+		},
+
+		getPublicArtist: function(){
+			return publicArtist;
+		},
+
+		setPublicArtist: function(value){
+			publicArtist = value;
+		},
+
+		getPublicKey: function(){
+			return publicKey;
+		},
+
+		setPublicKey: function(value){
+			publicKey = value;
 		}
 
 

@@ -16,12 +16,6 @@ define(["jquery", "deleteSong"], function($, deleteSong){
 				};
 			}
 
-				// console.log("new object is", newObj);
-				// $("#indiv_songs").append("<p>"+newObj.title + " - by "+newObj.artist+" on the album "+newObj.album+"<button class='deleteSong btn btn-default'>Delete</button> </p>");
-				// $("#add_wrap").css("display", "none");
-				// $("#m_holder").fadeIn("slow");
-				// deleteSong();
-
 				//push to firebase
 				$.ajax({
 					url: "https://radiant-inferno-9240.firebaseio.com/songs.json",

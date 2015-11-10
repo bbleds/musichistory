@@ -2,39 +2,39 @@ define(["jquery", "filterSong", "manipulate"], function($, filterSong, manipulat
 
 return {
 
+		
 		addArtists: function(){
 
-
 			$.ajax({
-					url: "https://radiant-inferno-9240.firebaseio.com/.json"
-					//pass data to callbackOne function reference
-				}).done(function(data1){
+				url: "https://radiant-inferno-9240.firebaseio.com/.json"
+				//pass data to callbackOne function reference
+			}).done(function(data1){
 
-					// console.log("data one");
-					// console.log(data1);
+				console.log("data1", data1);
 
-					//populate artists and albums
-					require(["hbs!../templates/addArtists"], function(songTemplate){
-		      			$("#artists_here").html(songTemplate(data1));
-		      			$(".find_me").click(function(){
-							console.log($(this)[0].children[0].innerHTML);
-							for( key in data1.songs){
-									var clickedText = $(this)[0].children[0].innerHTML.toLowerCase();
-									var loweredLetters = data1.songs[key].artist.toLowerCase();
-									
+				//populate albums
+				require(["hbs!../templates/addArtists"], function(songTemplate){
 
-									if (clickedText === loweredLetters) {
-										filterSong.filterSong();
-									};
+					//populate albums in left drop down, executed onclick on album dropdown
+	      			$("#artists_here").html(songTemplate(data1));
 
-								}
-						});
-		    		});
+	      			//If specific album is clicked, filter songs to songs from selected album
+	      			$(".find_me").click(function(){
+	      				//The text that was clicked inside album dropdown
+	      				var clickedText = $(this)[0].children[0].innerHTML.toLowerCase();
 
+	      				// If clicked album text = current key in songs
+	      				manipulate.setPublicArtist(clickedText);
 
-				});
+	      				//run filter output
+						filterSong.filterArtists(data1);
 
-				}
-			};
+					});
+	    		});
+
+			  });
+
+			}
+		};
 			
 });

@@ -29,12 +29,18 @@ define(["jquery", "manipulate", "populate-songs", "addSongFunctionality", "get-m
 	//call artist and album button population
 
 	$("#artist-btn").click(function(){
-		artBtn.addArtists();
+		 artBtn.addArtists();
+
 	});
 
 	$("#album-btn").click(function(){
 		albumBtn.addAlbums();
 
+	});
+
+	//undo Filtering functions
+	$("#filter_me").click(function(){
+		populateSongs.getInitialSongs();
 	});
 
 
@@ -50,7 +56,7 @@ define(["jquery", "manipulate", "populate-songs", "addSongFunctionality", "get-m
 		$("#addBtn").click(function(){ addSongF.createNewObjectAndClear(); });	
 
 	//Ajax call get-more-songs.json
-		getMoreSongs.getSecondSongs();
+		// getMoreSongs.getSecondSongs();
 
 
 //functions

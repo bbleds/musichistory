@@ -1,13 +1,16 @@
-define(["jquery", "manipulate", "filterAlbumCallback"], function($, manipulate, filterAlbumCallback){
+define(["jquery", "manipulate", "filterAlbumCallback", "filterArtistCallback"], function($, manipulate, filterAlbumCallback, filterArtistCallback){
 
 	return {
 
-		filterSong:function(){
-		$.ajax({
-				//url: "songsList.json"
-				url:"https://radiant-inferno-9240.firebaseio.com/.json"
-				//pass data to callbackOne function reference
-			}).done(filterAlbumCallback);
+		filterAlbum:function(data){
+		
+		filterAlbumCallback(data);
+
+	  	},
+
+	  filterArtists:function(data){
+		
+		filterArtistCallback(data);
 
 	  }
 
