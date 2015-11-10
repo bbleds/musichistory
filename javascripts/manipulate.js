@@ -3,6 +3,9 @@ define(["jquery"], function($){
 	var firstArrObjects=[];
 	var secondArrObjects=[];
 	var moreSongsWereAdded = false;
+	var publicAlbum; 
+	var publicArtist;
+
 
 	//public interface
 
@@ -37,6 +40,14 @@ define(["jquery"], function($){
 
 		setIfMore : function(booly){
 			moreSongsWereAdded = booly;
+		},
+	//for filter functionality
+		getPublicAlbum: function(){
+			return publicAlbum
+		},
+
+		setPublicAlbum: function(value){
+			publicAlbum = value;
 		}
 
 

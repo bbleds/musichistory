@@ -1,9 +1,9 @@
 define(["jquery", "filterSong", "manipulate"], function($, filterSong, manipulate){
 
+
 return {
 
-		addArtists: function(){
-
+		addAlbums: function(){
 
 			$.ajax({
 					url: "https://radiant-inferno-9240.firebaseio.com/.json"
@@ -14,23 +14,26 @@ return {
 					// console.log(data1);
 
 					//populate artists and albums
-					require(["hbs!../templates/addArtists"], function(songTemplate){
-		      			$("#artists_here").html(songTemplate(data1));
+					require(["hbs!../templates/addAlbum"], function(songTemplate){
+		      			$("#albums_here").html(songTemplate(data1));
 		      			$(".find_me").click(function(){
-							console.log($(this)[0].children[0].innerHTML);
-							for( key in data1.songs){
+								console.log($(this)[0].children[0].innerHTML);
+								for(var key in data1.songs){
+									
 									var clickedText = $(this)[0].children[0].innerHTML.toLowerCase();
-									var loweredLetters = data1.songs[key].artist.toLowerCase();
+									var loweredLetters = data1.songs[key].album.toLowerCase();
 									
 
 									if (clickedText === loweredLetters) {
+										manipulate.setPublicAlbum(loweredLetters);
+										console.log(manipulate.getPublicAlbum());
+										//set album to public, then run filter
 										filterSong.filterSong();
-									};
+									}
 
 								}
 						});
 		    		});
-
 
 				});
 

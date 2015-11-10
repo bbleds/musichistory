@@ -1,5 +1,5 @@
-define(["jquery", "manipulate", "populate-songs", "addSongFunctionality", "get-more-songs", "deleteSong", "artist_btn"], 
-	function($, manipulate, populateSongs, addSongF, getMoreSongs, deleteSong, artBtn){
+define(["jquery", "manipulate", "populate-songs", "addSongFunctionality", "get-more-songs", "deleteSong", "artist_btn", "album_btn"], 
+	function($, manipulate, populateSongs, addSongF, getMoreSongs, deleteSong, artBtn, albumBtn){
 
 //Main logic of app
 
@@ -28,7 +28,15 @@ define(["jquery", "manipulate", "populate-songs", "addSongFunctionality", "get-m
 
 	//call artist and album button population
 
-	artBtn.addArtists();
+	$("#artist-btn").click(function(){
+		artBtn.addArtists();
+	});
+
+	$("#album-btn").click(function(){
+		albumBtn.addAlbums();
+
+	});
+
 
 
 

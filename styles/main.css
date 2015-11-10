@@ -139,6 +139,8 @@ input[type="range"] {
 #m_holder button {
   color: rgba(49, 49, 49, 0.76);
   font-size: 1.3rem; }
+#m_holder #artist-btn button {
+  width: 100%; }
 
 .add_width {
   width: 30%;
