@@ -10,13 +10,29 @@ return {
 				//pass data to callbackOne function reference
 			}).done(function(data1){
 
-				console.log("data1", data1);
 
 				//populate albums
 				require(["hbs!../templates/addArtists"], function(songTemplate){
 
+					//create empty object array
+					var objectArray = [];
+					//create empty artist array
+					var artistArray = [];
+
+					//loop over objects in songs,
+					for(var key in data1.songs){ 
+						
+						//if artist is not in artist array, push artist name into artist array and push current object into object array
+						if(artistArray.indexOf(data1.songs[key].artist) === -1){
+							artistArray.push(data1.songs[key].artist);
+							objectArray.push(data1.songs[key]);
+						}
+					}
+
+					//pass objectArray
 					//populate albums in left drop down, executed onclick on album dropdown
-	      			$("#artists_here").html(songTemplate(data1));
+	      			$("#artists_here").html(songTemplate(objectArray));
+
 
 	      			//If specific album is clicked, filter songs to songs from selected album
 	      			$(".find_me").click(function(){

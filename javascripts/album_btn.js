@@ -15,8 +15,23 @@ return {
 				//populate albums
 				require(["hbs!../templates/addAlbum"], function(songTemplate){
 
+					//create empty object array
+					var objectArray = [];
+					//create empty artist array
+					var albumArray = [];
+
+					//loop over objects in songs,
+					for(var key in data1.songs){ 
+						
+						//if artist is not in artist array, push artist name into artist array and push current object into object array
+						if(albumArray.indexOf(data1.songs[key].album) === -1){
+							albumArray.push(data1.songs[key].album);
+							objectArray.push(data1.songs[key]);
+						}
+					}
+
 					//populate albums in left drop down, executed onclick on album dropdown
-	      			$("#albums_here").html(songTemplate(data1));
+	      			$("#albums_here").html(songTemplate(objectArray));
 
 	      			//If specific album is clicked, filter songs to songs from selected album
 	      			$(".find_me").click(function(){

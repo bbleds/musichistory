@@ -10,7 +10,8 @@ requirejs.config({
   paths:{
     "jquery": "../lib/bower_components/jquery/dist/jquery.min",
     "hbs": "../lib/bower_components/require-handlebars-plugin/hbs",
-    "bootstrapJs": "../lib/bower_components/bootstrap/dist/js/bootstrap.min"
+    "bootstrapJs": "../lib/bower_components/bootstrap/dist/js/bootstrap.min",
+    "firebase": "https://cdn.firebase.com/js/client/2.2.1/firebase"
   }
 });
 
