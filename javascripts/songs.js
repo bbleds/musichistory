@@ -1,5 +1,5 @@
-define(["jquery", "manipulate", "populate-songs", "addSongFunctionality", "get-more-songs", "deleteSong", "artist_btn", "album_btn"], 
-	function($, manipulate, populateSongs, addSongF, getMoreSongs, deleteSong, artBtn, albumBtn){
+define(["jquery", "lodashTest", "manipulate", "populate-songs", "addSongFunctionality", "get-more-songs", "deleteSong", "artist_btn", "album_btn"], 
+	function($, lodashTest, manipulate, populateSongs, addSongF, getMoreSongs, deleteSong, artBtn, albumBtn){
 
 //Main logic of app
 
@@ -90,5 +90,11 @@ define(["jquery", "manipulate", "populate-songs", "addSongFunctionality", "get-m
 			$("#artist_name").val("");
 			$("#album_name").val("");
 	}
+
+
+
+
+	// mess with lodash
+	lodashTest();
 
 });

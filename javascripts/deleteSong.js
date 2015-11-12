@@ -31,6 +31,7 @@ define(["jquery", "firebase"],
 								var FirebaseRef = 'https://radiant-inferno-9240.firebaseio.com/songs/'+currentKey;
 								console.log(FirebaseRef);
 								var myRef = new Firebase(FirebaseRef);
+								//console.log(myRef.key());
 								myRef.remove();
 
 								 

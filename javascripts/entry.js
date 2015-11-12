@@ -4,6 +4,10 @@ requirejs.config({
         bootstrapJs : {
             deps : [ 'jquery'],
             exports: 'Bootstrap'
+        },
+
+        "firebase": {
+            exports: "Firebase"
         }
       },
 
@@ -11,7 +15,7 @@ requirejs.config({
     "jquery": "../lib/bower_components/jquery/dist/jquery.min",
     "hbs": "../lib/bower_components/require-handlebars-plugin/hbs",
     "bootstrapJs": "../lib/bower_components/bootstrap/dist/js/bootstrap.min",
-    "firebase": "https://cdn.firebase.com/js/client/2.2.1/firebase",
+    "firebase": "../lib/bower_components/firebase/firebase",
     "lodash": "../lib/bower_components/lodash/lodash.min"
   }
 });
