@@ -25,29 +25,39 @@ define(["jquery", "lodashTest", "manipulate", "populate-songs", "addSongFunction
 			});
 	// end nav functionality
 
+	//refactor get stuff to firebase
+			// Create a reference to your Firebase database
+			var myFirebaseRef = new Firebase("https://radiant-inferno-9240.firebaseio.com");
 
-	//call artist and album button population
+			// Listen for when anything changes on the "songs" key
+			myFirebaseRef.child("songs").on("value", function(snapshot) {
 
-	$("#artist-btn").click(function(){
-		 artBtn.addArtists();
+				// Store the entire songs key in a local variable
+	 				var allSongsObject = snapshot.val();
+	 				console.log(allSongsObject);
 
-	});
+ 				// Bind the allSongsObject to the song list Handlebar template
+	 				require(["hbs!../templates/songs"], function(songTemplate){
+				      $("#indiv_songs").html(songTemplate(allSongsObject));
+				      deleteSong();
+				    });
 
-	$("#album-btn").click(function(){
-		albumBtn.addAlbums();
-
-	});
-
-	//undo Filtering functions
-	$("#filter_me").click(function(){
-		populateSongs.getInitialSongs();
-	});
-
+  				// Bind the unique artists to the artists template
+	  				 artBtn.addArtists(allSongsObject);
 
 
+  				// Bind the unique albums to the albums template
+	  				albumBtn.addAlbums(allSongsObject);
 
-	//Ajax call --> first call will now be in populate-songs.js
-		populateSongs.getInitialSongs();
+  				//bind unfilter button to reset songs to inital
+	  				$("#filter_me").click(function(){
+		  				require(["hbs!../templates/songs"], function(songTemplate){
+						    $("#indiv_songs").html(songTemplate(allSongsObject));
+						    deleteSong();
+					    });
+	  				});
+			});
+
 
 	//add event listener for handling adding songs
 		//pass in addSongFunctionality object that is passed in above from that file

@@ -3,12 +3,12 @@ define(["jquery", "filterSong", "manipulate"], function($, filterSong, manipulat
 
 return {
 
-		addAlbums: function(){
+		addAlbums: function(data1){
 
-			$.ajax({
-				url: "https://radiant-inferno-9240.firebaseio.com/.json"
-				//pass data to callbackOne function reference
-			}).done(function(data1){
+			// $.ajax({
+			// 	url: "https://radiant-inferno-9240.firebaseio.com/.json"
+			// 	//pass data to callbackOne function reference
+			// }).done(function(data1){
 
 				console.log("data1", data1);
 
@@ -21,12 +21,12 @@ return {
 					var albumArray = [];
 
 					//loop over objects in songs,
-					for(var key in data1.songs){ 
+					for(var key in data1){ 
 						
 						//if artist is not in artist array, push artist name into artist array and push current object into object array
-						if(albumArray.indexOf(data1.songs[key].album) === -1){
-							albumArray.push(data1.songs[key].album);
-							objectArray.push(data1.songs[key]);
+						if(albumArray.indexOf(data1[key].album) === -1){
+							albumArray.push(data1[key].album);
+							objectArray.push(data1[key]);
 						}
 					}
 
@@ -37,6 +37,8 @@ return {
 	      			$(".find_me").click(function(){
 	      				//The text that was clicked inside album dropdown
 	      				var clickedText = $(this)[0].children[0].innerHTML.toLowerCase();
+	      				console.log("the clickedText is ");
+	      				console.log(clickedText);
 
 	      				// If clicked album text = current key in songs
 	      				manipulate.setPublicAlbum(clickedText);
@@ -46,10 +48,7 @@ return {
 
 					});
 	    		});
+		}
 
-			  });
-
-			}
-		};
-			
+	}
 });

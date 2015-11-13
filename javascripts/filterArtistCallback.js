@@ -5,18 +5,18 @@ return	function(data){
 
 				//clear inner html of indiv_songs in order to filter
 				$("#indiv_songs").html("");
-				// console.log(data.songs);
+				// console.log(data);
 				console.log("the data is below");
 				var arrayOfSongs =[]
 				console.log("DATA", data)
 				//loop through songs and store ones that will match inside of arrayOfSongs
-				for(var key in data.songs){
+				for(var key in data){
 									
-					if (data.songs[key].artist.toLowerCase() === manipulate.getPublicArtist()) {
+					if (data[key].artist.toLowerCase() === manipulate.getPublicArtist()) {
 						// console.log("mushshshshsh");
 						// console.log(key);
-						// console.log(data.songs[key]);
-						var filteredSongs = data.songs[key];
+						// console.log(data[key]);
+						var filteredSongs = data[key];
 						arrayOfSongs.push(filteredSongs);
 
 					}

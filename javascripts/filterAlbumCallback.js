@@ -5,20 +5,25 @@ return	function(data){
 
 				//clear inner html of indiv_songs in order to filter
 				$("#indiv_songs").html("");
-				// console.log(data.songs);
+				// console.log(data);
 				console.log("the data is below");
 				var arrayOfSongs =[]
 				console.log("DATA", data)
 				//loop through songs and store ones that will match inside of arrayOfSongs
-				for(var key in data.songs){
+				for(var key in data){
+					console.log("compare below");
+					console.log(data[key].album.toLowerCase());
+					console.log(manipulate.getPublicAlbum());
 									
-					if (data.songs[key].album.toLowerCase() === manipulate.getPublicAlbum()) {
+					if (data[key].album.toLowerCase() === manipulate.getPublicAlbum()) {
 						console.log("mushshshshsh");
 						console.log(key);
-						console.log(data.songs[key]);
-						var filteredSongs = data.songs[key];
+						console.log(data[key]);
+						var filteredSongs = data[key];
 						arrayOfSongs.push(filteredSongs);
 
+					} else{
+						console.log("nope it aint");
 					}
 				}
 

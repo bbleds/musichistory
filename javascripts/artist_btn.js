@@ -3,14 +3,13 @@ define(["jquery", "filterSong", "manipulate"], function($, filterSong, manipulat
 return {
 
 		
-		addArtists: function(){
+		addArtists: function(data1){
 
-			$.ajax({
-				url: "https://radiant-inferno-9240.firebaseio.com/.json"
-				//pass data to callbackOne function reference
-			}).done(function(data1){
-
-
+			console.log(data1);
+			// $.ajax({
+			// 	url: "https://radiant-inferno-9240.firebaseio.com/.json"
+			// 	//pass data to callbackOne function reference
+			// }).done(function(data1){
 				//populate albums
 				require(["hbs!../templates/addArtists"], function(songTemplate){
 
@@ -20,12 +19,14 @@ return {
 					var artistArray = [];
 
 					//loop over objects in songs,
-					for(var key in data1.songs){ 
+					for(var key in data1){ 
+
+						console.log(key);
 						
 						//if artist is not in artist array, push artist name into artist array and push current object into object array
-						if(artistArray.indexOf(data1.songs[key].artist) === -1){
-							artistArray.push(data1.songs[key].artist);
-							objectArray.push(data1.songs[key]);
+						if(artistArray.indexOf(data1[key].artist) === -1){
+							artistArray.push(data1[key].artist);
+							objectArray.push(data1[key]);
 						}
 					}
 
@@ -47,10 +48,7 @@ return {
 
 					});
 	    		});
-
-			  });
-
-			}
-		};
-			
+	 	}
+	}
 });
+
