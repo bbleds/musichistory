@@ -21,6 +21,7 @@
       <a class="navbar-brand" href="#">Get The Beats</a>
     </div>
 
+
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -36,14 +37,19 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
 	<div id="main_container">
+
+	
+
+
 		<div id="add_wrap" class="add_vis">
 					<li class="music_selector"><label>Song Name</label><input type="text" id="song_name" name="song_name" class="add_width form-control"></li>
 					<li class="music_selector"><label for="artist_name">Artist Name</label><input  type="text" id="artist_name" name="artist_name" class="add_width form-control"></li>
 					<li class="music_selector"><label for="album_name">Album Name</label><input type="text" id="album_name" name="album_name" class="add_width form-control"></li>
 					<li class="music_selector"><button id="addBtn" class="add_music btn-default"> Add</button></li>
 				</div> <!-- end add_wrap -->
+
+
 		
 		<div id="m_holder" class="fluid-container">
 			<div class="row">
@@ -96,10 +102,34 @@
 		</div><!-- end m_holder -->
 		
 		<div id="song_hold"></div>
+
+		<div class="modal fade" id="addSongModal">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">My Response</h4>
+		      </div>
+		      <div class="modal-body">
+		        Response Outputs Here
+		      </div>
+		      <div class="modal-footer">
+	
+		        <button type="button" class="btn btn-primary" data-dismiss="modal">I Get It, Man</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		
+
+		
+
 	</div> <!-- end main_container -->
 	<!-- <script src="./lib/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="./lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="javascripts/songs.js" type="text/javascript"></script> -->
+
 	<script data-main="javascripts/entry.js" type="text/javascript" src="./lib/bower_components/requirejs/require.js"></script>
 </body>
 </html>

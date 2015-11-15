@@ -1,11 +1,12 @@
-define(["jquery", "lodashTest", "manipulate", "populate-songs", "addSongFunctionality", "get-more-songs", "deleteSong", "artist_btn", "album_btn"], 
-	function($, lodashTest, manipulate, populateSongs, addSongF, getMoreSongs, deleteSong, artBtn, albumBtn){
+define(["jquery", "q", "lodashTest", "manipulate", "populate-songs", "addSongFunctionality", "get-more-songs", "deleteSong", "artist_btn", "album_btn"], 
+	function($, Q, lodashTest, manipulate, populateSongs, addSongF, getMoreSongs, deleteSong, artBtn, albumBtn){
 
 //Main logic of app
 
 	//Navbar functionality for fade-in on scroll --> 
 		//set the height of container to height of screen
 			$("#main_container").css("height", $(window).height());
+
 
 		//set height on resize
 			$(window).resize(function(){
@@ -63,7 +64,22 @@ define(["jquery", "lodashTest", "manipulate", "populate-songs", "addSongFunction
 		//pass in addSongFunctionality object that is passed in above from that file
 			//call the createNewObjectAndClear method that is built in on that object
 				//this attaches event handler for adding songs
-		$("#addBtn").click(function(){ addSongF.createNewObjectAndClear(); });	
+				console.log(">>>>>>>>>>>>>", addSongF)
+		//refactor to promises
+		$("#addBtn").click(function(){
+			console.log(">>>>>>>>>>>>>", addSongF()) 
+			addSongF()
+			.then(function(dataReturned){
+				console.log(" this is a promise return");
+
+				$("#addSongModal").modal();
+				$(".modal-body").html("<p>Song has been added to your playlist!</p>");
+			});
+		 });	
+
+		
+
+
 
 	//Ajax call get-more-songs.json
 		// getMoreSongs.getSecondSongs();
