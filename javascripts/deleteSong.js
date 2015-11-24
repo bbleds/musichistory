@@ -1,5 +1,5 @@
-define(["jquery", "firebase"], 
-	function($){
+define(["jquery", "firebase", "deleteCall"], 
+	function($, firebase, deleteCall){
 
 		// handles delete functionality for each delete button on song p tags, ajax call is separeted into another module
 		return function(){
@@ -13,11 +13,10 @@ define(["jquery", "firebase"],
 
 						var titleToCompare = dashIndex[0];
 
-						$.ajax({
-							url: "https://radiant-inferno-9240.firebaseio.com/.json"
-						//pass data to callbackOne function reference
-						}).done(function(data){
+						deleteCall()
+						.then(function(data){
 
+							console.log("BACK IN THEN");
 							console.log("dashIndex", titleToCompare);
 							var currentKey;
 							//console.log(data);
@@ -38,6 +37,15 @@ define(["jquery", "firebase"],
 								}
 							}
 
+							
+						})
+						.done(function(){
+							console.log("inside DONEEEEEEEE");
+							$("#addSongModal").modal();
+							$(".modal-body").html("<p>Song has been removed from your playlist!</p>");
+						})
+
+
 						});
 
 
@@ -47,7 +55,6 @@ define(["jquery", "firebase"],
 
 					//delete all data in this object
 					// fredRef.remove();
-			 	});
 		};
 
 });

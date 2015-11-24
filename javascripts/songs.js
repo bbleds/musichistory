@@ -64,10 +64,10 @@ define(["jquery", "q", "lodashTest", "manipulate", "populate-songs", "addSongFun
 		//pass in addSongFunctionality object that is passed in above from that file
 			//call the createNewObjectAndClear method that is built in on that object
 				//this attaches event handler for adding songs
-				console.log(">>>>>>>>>>>>>", addSongF)
+				// console.log(">>>>>>>>>>>>>", addSongF)
 		//refactor to promises
 		$("#addBtn").click(function(){
-			console.log(">>>>>>>>>>>>>", addSongF()) 
+			// console.log(">>>>>>>>>>>>>", addSongF()) 
 			addSongF()
 			.then(function(dataReturned){
 				console.log(" this is a promise return");

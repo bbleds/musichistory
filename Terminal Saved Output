@@ -1,0 +1,195 @@
+Last login: Sat Nov 21 09:01:40 on ttys000
+You have mail.
+➜  workspace  vagrant ssh
+Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.16.0-30-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 1.0
+
+Last login: Sat Nov 21 09:02:53 2015 from 10.0.2.2
+
+*************    WELCOME TO YOUR NSS VAGRANT MACHINE   *************
+  1. Always be working in the /vagrant directory
+  2. Always know where you are with pwd command
+  3. Use mv to move files, cp to copy files and touch to create them
+********************************************************************
+
+vagrant@vagrant-debian-trusty:/vagrant$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+vagrant@vagrant-debian-trusty:/vagrant$ cd cbs-moviehistory/
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory$ ls
+index.html  javascripts  lib  readMe.MD  sass  styles  templates
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory$ cd javascripts/
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory/javascripts$ ls
+createUserInFirebase.js  entry.js  getMoviePosters.js  getMoviesFromAPI.js  loginAuth.js
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory/javascripts$ rm getMoviePosters.js 
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory/javascripts$ ls
+createUserInFirebase.js  entry.js  getMoviesFromAPI.js  loginAuth.js
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory/javascripts$ git status
+On branch apiTestingforMovies-bb
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   entry.js
+	modified:   ../templates/findMovies.hbs
+	modified:   ../templates/main.hbs
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	getMoviesFromAPI.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory/javascripts$ ls
+createUserInFirebase.js  entry.js  getMoviesFromAPI.js  loginAuth.js
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory/javascripts$ touch generalVariables.js
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory/javascripts$ ls
+createUserInFirebase.js  entry.js  generalVariables.js  getMoviesFromAPI.js  loginAuth.js
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory/javascripts$ ls
+createUserInFirebase.js  entry.js  generalVariables.js  getMoviesFromAPI.js  loginAuth.js
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory/javascripts$ touch addMovieToUserUnwatched.js
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory/javascripts$ ls
+addMovieToUserUnwatched.js  createUserInFirebase.js  entry.js  generalVariables.js  getMoviesFromAPI.js  loginAuth.js
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory/javascripts$ mv addMovieToUserUnwatched.js addMovieToUser.js
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory/javascripts$ ls
+addMovieToUser.js  createUserInFirebase.js  entry.js  generalVariables.js  getMoviesFromAPI.js  loginAuth.js
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory/javascripts$ cd ../
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory$ git branch
+  Email_auth_test_bb
+  after-login-registration
+  after-login-registration-bb
+* apiTestingforMovies-bb
+  email_auth_and_login_auth_test_bb
+  format-splash
+  master
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory$ git status
+On branch apiTestingforMovies-bb
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   javascripts/createUserInFirebase.js
+	modified:   javascripts/entry.js
+	modified:   javascripts/loginAuth.js
+	modified:   templates/findMovies.hbs
+	modified:   templates/main.hbs
+	modified:   templates/searchMovies.hbs
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	javascripts/addMovieToUser.js
+	javascripts/generalVariables.js
+	javascripts/getMoviesFromAPI.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory$ git add .
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory$ git status
+On branch apiTestingforMovies-bb
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   javascripts/addMovieToUser.js
+	modified:   javascripts/createUserInFirebase.js
+	modified:   javascripts/entry.js
+	new file:   javascripts/generalVariables.js
+	new file:   javascripts/getMoviesFromAPI.js
+	modified:   javascripts/loginAuth.js
+	modified:   templates/findMovies.hbs
+	modified:   templates/main.hbs
+	modified:   templates/searchMovies.hbs
+
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory$ git commit -am "added functionality for adding movies to a user in firebase via api"
+[apiTestingforMovies-bb 0e94e11] added functionality for adding movies to a user in firebase via api
+ 9 files changed, 267 insertions(+), 89 deletions(-)
+ create mode 100644 javascripts/addMovieToUser.js
+ create mode 100644 javascripts/generalVariables.js
+ create mode 100644 javascripts/getMoviesFromAPI.js
+ rewrite templates/main.hbs (60%)
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory$ git branch
+  Email_auth_test_bb
+  after-login-registration
+  after-login-registration-bb
+* apiTestingforMovies-bb
+  email_auth_and_login_auth_test_bb
+  format-splash
+  master
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory$ git status
+On branch apiTestingforMovies-bb
+nothing to commit, working directory clean
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory$ git push origin apiTestingforMovies-bb 
+Enter passphrase for key '/home/vagrant/.ssh/id_rsa': 
+Counting objects: 36, done.
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (13/13), 3.58 KiB | 0 bytes/s, done.
+Total 13 (delta 6), reused 0 (delta 0)
+To git@github.com:vazquecm/cbs-moviehistory.git
+ * [new branch]      apiTestingforMovies-bb -> apiTestingforMovies-bb
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory$ git branch
+  Email_auth_test_bb
+  after-login-registration
+  after-login-registration-bb
+* apiTestingforMovies-bb
+  email_auth_and_login_auth_test_bb
+  format-splash
+  master
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory$ git checkout -b feature_search_user_movies_bb
+Switched to a new branch 'feature_search_user_movies_bb'
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory$ git branch
+  Email_auth_test_bb
+  after-login-registration
+  after-login-registration-bb
+  apiTestingforMovies-bb
+  email_auth_and_login_auth_test_bb
+* feature_search_user_movies_bb
+  format-splash
+  master
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory$ cd javascripts/
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory/javascripts$ ls
+addMovieToUser.js  createUserInFirebase.js  entry.js  generalVariables.js  getMoviesFromAPI.js  loginAuth.js
+vagrant@vagrant-debian-trusty:/vagrant/cbs-moviehistory/javascripts$ touch 
