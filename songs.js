@@ -19,7 +19,7 @@ var moreSongsWereAdded = false;
 	$.ajax({
 		url: "moreSongs.json"
 	}).done(function(data){
-		console.log("Second Data is: ", data.MoreSongs);
+		// console.log("Second Data is: ", data.MoreSongs);
 		$("#moreSongs").click(function(){
 				for(var i =0; i < data.MoreSongs.length; i++){
 			var indivSong = data.MoreSongs[i];
@@ -42,7 +42,7 @@ var moreSongsWereAdded = false;
 	// loop over songs in json
 	function loopOverMySongObjects(data){
 		for(var i =0; i < data.songs.length; i++){
-			console.log(data.songs[i]);
+			// console.log(data.songs[i]);
 			var indivSong = data.songs[i];
 			$("#indiv_songs").append("<p>"+indivSong.title+" - by "+indivSong.artist+" on the album "+indivSong.album+"<button class='deleteSong'>Delete</button></p>");
 
@@ -109,6 +109,7 @@ var moreSongsWereAdded = false;
 			$("#artist_name").val("");
 			$("#album_name").val("");
 	}
+
 
 
 
