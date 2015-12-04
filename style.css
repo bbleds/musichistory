@@ -1,6 +1,13 @@
 body{
 	margin: 0px;
 }
+
+a{
+	text-decoration: none;
+	color: inherit;
+} 
+
+
  #nav_bar{
  	width: 80%;
  	height: 80px;
