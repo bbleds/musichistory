@@ -1,6 +1,6 @@
-//add initial ctrlr
-app.controller("listCtrl", [ "$q", "$http", "$scope", "commonSongs",
-	function($q, $http, $scope, commonSongs){
+//add initial ctrlr --> gets songs from firebase
+app.controller("listCtrl", [ "$q", "$http", "$scope", "commonSongs", "$routeParams", "$firebaseArray",
+	function($q, $http, $scope, commonSongs, $routeParams, $firebaseArray){
 
 	$scope.test = "ben";
 	$scope.ArrayOfSongs;
@@ -8,63 +8,100 @@ app.controller("listCtrl", [ "$q", "$http", "$scope", "commonSongs",
 	$scope.searchAlbum;
 	
 	$scope.removeSong = function(song){
-		console.log("song", song);
+
+		console.log("firebaseArray ", songRefArray );
 
 		var indexToSplice = $scope.ArrayOfSongs.indexOf(song);
 
-		console.log("index of tha ", indexToSplice);
+		songRefArray.$remove(songRefArray[indexToSplice]);
+		// console.log("song", song);
 
-		$scope.ArrayOfSongs.splice(indexToSplice, 1);
 
-		console.log("nehw resuhlt ", $scope.ArrayOfSongs);
+		// console.log("index of tha ", indexToSplice);
+
+		// $scope.ArrayOfSongs.splice(indexToSplice, 1);
+
+		// console.log("nehw resuhlt ", $scope.ArrayOfSongs);
+
+		// $scope.ArrayOfSongs.$remove($scope.ArrayOfSongs[indexToSplice]);
 
 
 
 	};
 
-	commonSongs.getSongArray();
 
-	console.log("commonSongs array", commonSongs.getSongArray().length);
+	//Lets get songs from firebase -->
 
-	if (commonSongs.getSongArray().length === 0){
+		//references firebase
+		var songRef = new Firebase("https://radiant-inferno-9240.firebaseio.com/songs");
 
-	commonSongs.getFirstSongs()
+		//convert firebase data returned into array
+		var songRefArray = $firebaseArray(songRef);
 
-	.then(function(data){
-
-		console.log("data >>>>>>>>>>>>>>>>", data);
-
-
-		$scope.ArrayOfSongs =  Object.keys(data).map(song => data[song]);
+		//log the data returned
+		console.log("songRefArray", songRefArray);
 
 
-		return commonSongs.getlastSongs()
 
-	})
+		//when array is loaded,
+		songRefArray.$loaded()
 
-	.then(function(data2){
+		//then
+		.then(function(data){
 
-			console.log("now in the data2 promise");
 
-			console.log("data2 >>>>>>>>>>>>>>>>>", data2);
+			//display the data
+			console.log("data", data);
 
-			console.log("ArrayOfSongs", $scope.ArrayOfSongs);
-
-			$scope.ArrayOfSongs = $scope.ArrayOfSongs.concat(data2);
-
-			console.log("ArrayOfSongs with final concat", $scope.ArrayOfSongs);
-
-			commonSongs.setSongList($scope.ArrayOfSongs);
-
-			console.log("commonSongs list", commonSongs.getSongArray());
+			//set the songs as an array to output
+			$scope.ArrayOfSongs = data;
 
 		});
 
-	} else {
 
-		$scope.ArrayOfSongs = commonSongs.getSongArray();
+	// commonSongs.getSongArray();
 
-	}
+	// console.log("commonSongs array", commonSongs.getSongArray().length);
+
+	// if (commonSongs.getSongArray().length === 0){
+
+	// commonSongs.getFirstSongs()
+
+	// .then(function(data){
+
+	// 	console.log("data >>>>>>>>>>>>>>>>", data);
+
+
+	// 	$scope.ArrayOfSongs =  Object.keys(data).map(song => data[song]);
+
+
+	// 	return commonSongs.getlastSongs()
+
+	// })
+
+	// .then(function(data2){
+
+	// 		console.log("now in the data2 promise");
+
+	// 		console.log("data2 >>>>>>>>>>>>>>>>>", data2);
+
+	// 		console.log("ArrayOfSongs", $scope.ArrayOfSongs);
+
+	// 		$scope.ArrayOfSongs = $scope.ArrayOfSongs.concat(data2);
+
+	// 		console.log("ArrayOfSongs with final concat", $scope.ArrayOfSongs);
+
+	// 		commonSongs.setSongList($scope.ArrayOfSongs);
+
+	// 		console.log("commonSongs list", commonSongs.getSongArray());
+
+	// 	});
+
+	// } else {
+
+	// 	$scope.ArrayOfSongs = commonSongs.getSongArray();
+
+	// }
 
 	//this module should output the list from commonSongs
 

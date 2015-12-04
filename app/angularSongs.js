@@ -13,6 +13,10 @@ app.config(['$routeProvider',
       	templateUrl: "partials/addSongForm.html",
       	controller: "addCtrl"
       })
+      .when('/songs/:songId', {
+      	templateUrl: "partials/songDetail.html",
+      	controller: 'songDetail'
+      })
       .otherwise('/songs/list');
   }]);
 
@@ -30,3 +34,12 @@ app.config(['$routeProvider',
       // 1) link to firebase and pass in all references to firebase etc that are dependencies ( firebase and firebaseArrays, we can simply add a script tag for angular fire which modifies the firebase object)
       // 2) create a reference to the firebase for pulling in songs
 	  // 3) create a reference to firebase for adding songs
+	  // 4) view each individual song
+
+	  // Goal for iindiviudal song view
+	  	// 1) Make a songDetail partial
+		// 2) make a songDetail controller
+		// 3) make a dynamic route
+
+
+//add song functionality

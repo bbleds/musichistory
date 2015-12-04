@@ -1,15 +1,21 @@
 
 //controller for adding songs
-app.controller("addCtrl", ["commonSongs", "$scope",
- function(commonSongs, $scope){
+app.controller("addCtrl",  [ "$q", "$http", "$scope", "commonSongs", "$routeParams", "$firebaseArray",
+	function($q, $http, $scope, commonSongs, $routeParams, $firebaseArray){
  	$scope.title;
  	$scope.artist;
  	$scope.album;
 
  	$scope.addToArray = function(){
 
+ 		//references firebase
+		var songRef = new Firebase("https://radiant-inferno-9240.firebaseio.com/songs");
 
- 		commonSongs.pushSongs(
+		//convert firebase data returned into array
+		$scope.songs = $firebaseArray(songRef);
+
+
+ 		$scope.songs.$add(
  		{
  			title: $scope.title,
 

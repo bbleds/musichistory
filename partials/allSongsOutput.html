@@ -40,7 +40,7 @@
 
 			<div id="main_right_sidebar">
 				<p ng-repeat="item in ArrayOfSongs | filter: searchAlbum | filter: searchArtist">
-					{{item.title + " by " + item.artist + " on the album "+ item.album}}
+					<a href="#/songs/{{item.$id}}">{{item.title + " by " + item.artist + " on the album "+ item.album}}</a>
 					<button ng-click="removeSong(item)">Delete</button>
 				</p>
 				<!-- output individual songs -->
