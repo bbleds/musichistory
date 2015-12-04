@@ -1,0 +1,54 @@
+<div id="sidebars_holder">
+
+		<!-- Add a DOM element that contains some input fields for the user to enter in the name of a song, the artist for the song, and the album. You do not need to enclose them in a <form> element because we're not actually submitting this form anywhere. -->
+		<div id="main_music_wrap">
+
+			<div id="main_left_sidebar">
+			  <!-- <form id="filter_form"> -->
+				<label for="song_length">Song Length:</label>
+				<input type="range" name="song_length">		
+				<label for="artist">Artist:</label>
+				<select id="ar_select" name="artist" ng-model="searchArtist">
+					<option></option>
+					<option ng-repeat="item in ArrayOfSongs">{{item.artist}}</option>
+				</select>
+				<label for="album">Album:</label>
+				<select id="al_select" name="album" ng-model="searchAlbum">
+					<option></option>
+					<option ng-repeat="item in ArrayOfSongs">{{item.album }}</option>
+				</select>
+				<label for="Genre">Genre:</label>
+				<div id="checkbox_holder">
+					<div id="left_checks">
+						<li class="checker"><input type="checkbox" name="rock" value="rock">Rock </li>
+						<li><input type="checkbox" name="classical" value="classical" class="right_item">Classical</li>
+						<li class="checker"><input type="checkbox" name="pop" value="pop">Pop </li>
+					</div> <!-- end left_checks -->
+					<div id="right_checks">
+						<li><input type="checkbox" name="jazz" value="jazz" class="right_item">Jazz</li>
+						<li class="checker"><input type="checkbox" name="blues" value="blues">Blues</li>
+						<li><input type="checkbox" name="hip-hop" value="hip-hop" class="right_item">Hip-Hop</li>
+					</div> <!-- end right_checks -->
+				</div><!-- end checbox holder -->
+				<button id="filter_me">Filter</button>
+			  <!-- </form> -->
+			</div><!-- end main_left_sidebar -->
+
+
+
+		<!-- refectoring the following to angular -->
+
+			<div id="main_right_sidebar">
+				<p ng-repeat="item in ArrayOfSongs | filter: searchAlbum | filter: searchArtist">
+					{{item.title + " by " + item.artist + " on the album "+ item.album}}
+					<button ng-click="removeSong(item)">Delete</button>
+				</p>
+				<!-- output individual songs -->
+				<!-- <div id="indiv_songs">
+				
+				</div> end indiv_songs --> 
+				<!-- <button id="moreSongs">More</button> -->
+			</div><!-- end main_right_sidebar -->
+
+		</div><!-- end main music wrap -->
+		</div> <!-- end sidebars_holder -->

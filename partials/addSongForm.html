@@ -1,0 +1,17 @@
+<div id="add_form" ng-controller="addCtrl" >
+					<li class="music_selector">
+						<label class="inline">Song Name</label>
+						<input ng-model="title" type="text" id="song_name" name="song_name">
+					</li>
+					<li class="music_selector">
+						<label class="inline" for="artist_name">Artist Name</label>
+						<input ng-model="artist" type="text" id="artist_name" name="artist_name">
+					</li>
+					<li class="music_selector">
+						<label class="inline" for="album_name">Album Name</label>
+						<input ng-model="album" type="text" id="album_name" name="album_name">
+					</li>
+					<li class="music_selector">
+						<button ng-click="addToArray()" class="add_button">Add a song</button>
+					</li>
+		</div> <!-- end add_wrap -->
