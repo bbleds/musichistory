@@ -9,7 +9,17 @@ app.controller("listCtrl", [ "$q", "$http", "$scope", "commonSongs",
 	
 	$scope.removeSong = function(song){
 		console.log("song", song);
-		console.log("index of tha ", $scope.ArrayOfSongs.indexOf(song));
+
+		var indexToSplice = $scope.ArrayOfSongs.indexOf(song);
+
+		console.log("index of tha ", indexToSplice);
+
+		$scope.ArrayOfSongs.splice(indexToSplice, 1);
+
+		console.log("nehw resuhlt ", $scope.ArrayOfSongs);
+
+
+
 	};
 
 	commonSongs.getSongArray();
