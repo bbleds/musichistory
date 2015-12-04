@@ -1,45 +1,44 @@
 {
-	"songs": [
-	{
-		"title": "Levels",
-		"artist": "Avivii",
-		"album": "True"
-	},
+	"songs": {
+		"Levels" : {
+			"title": "Levels",
+			"artist": "Avivii",
+			"album": "True"
+		},
 
-	{
-		"title": "Legs",
-		"artist": "ZZTop",
-		"album": "Eliminator"
-	},
+		"Legs" : {
+			"title": "Legs",
+			"artist": "ZZTop",
+			"album": "Eliminator"
+		},
 
-	{
-		"title": "The Logical Song",
-		"artist": "Supertramp",
-		"album": "Breakfast in America"
-	},
-	{
-		"title": "Another Brick in the Wall",
-		"artist": "Pink Floyd",
-		"album": "The Wall"
-	},
-	{
-		"title": "Welcome to the Jungle",
-		"artist": "Guns 'N Roses",
-		"album": "Appetite for Destruction"
-	},
-	{
-		"title": "Ironic",
-		"artist": "Alanis Morisette",
-		"album": "Jagged Little Pill"
-	},
-	{
-		"title": "Fractals",
-		"artist": "Seven Lions",
-		"album": "Days to Come"
+		"Logical" : {
+			"title": "The Logical Song",
+			"artist": "Supertramp",
+			"album": "Breakfast in America"
+		},
+		"Brick" : {
+			"title": "Another Brick in the Wall",
+			"artist": "Pink Floyd",
+			"album": "The Wall"
+		},
+		"Jungle":{
+			"title": "Welcome to the Jungle",
+			"artist": "Guns 'N Roses",
+			"album": "Appetite for Destruction"
+		},
+		"Ironic": {
+			"title": "Ironic",
+			"artist": "Alanis Morisette",
+			"album": "Jagged Little Pill"
+		},
+		"Fractals": {
+			"title": "Fractals",
+			"artist": "Seven Lions",
+			"album": "Days to Come"
+		}
 	}
 
-
-		]
 }
 
 
