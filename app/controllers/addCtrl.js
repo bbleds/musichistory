@@ -15,6 +15,7 @@ app.controller("addCtrl",  [ "$q", "$http", "$scope", "commonSongs", "$routePara
 		$scope.songs = $firebaseArray(songRef);
 
 
+		//magigcal angular keyword --> add, adds the following object to firebase
  		$scope.songs.$add(
  		{
  			title: $scope.title,
